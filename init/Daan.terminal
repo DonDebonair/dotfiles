@@ -178,6 +178,8 @@
 	<real>1.1000000000000001</real>
 	<key>FontWidthSpacing</key>
 	<integer>1</integer>
+	<key>Linewrap</key>
+	<true/>
 	<key>ProfileCurrentVersion</key>
 	<real>2.02</real>
 	<key>SelectionColor</key>
@@ -222,6 +224,8 @@
 	<true/>
 	<key>WindowTitle</key>
 	<string></string>
+	<key>columnCount</key>
+	<integer>120</integer>
 	<key>name</key>
 	<string>Daan</string>
 	<key>shellExitAction</key>

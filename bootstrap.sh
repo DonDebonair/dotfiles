@@ -2,7 +2,7 @@
 cd "$(dirname "${BASH_SOURCE}")"
 git pull
 function doIt() {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "install-deps.sh" --exclude "README.md" -av . ~
+	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "install-deps.sh" --exclude "README.md" --exclude ".gitconfig_credentials" -av . ~
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
 	doIt
@@ -14,4 +14,7 @@ else
 	fi
 fi
 unset doIt
+
+# Add git author info and github credentials to gitconfig
+cat .gitconfig_credentials >> ~/.gitconfig
 source ~/.bash_profile

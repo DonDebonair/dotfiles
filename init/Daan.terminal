@@ -173,7 +173,7 @@
 	AAAAxw==
 	</data>
 	<key>FontAntialias</key>
-	<true/>
+	<false/>
 	<key>FontHeightSpacing</key>
 	<real>1.1000000000000001</real>
 	<key>FontWidthSpacing</key>

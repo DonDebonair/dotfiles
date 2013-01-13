@@ -19,14 +19,14 @@ brew install wget --enable-iri
 
 # Install RingoJS and Narwhal
 # Note that the order in which these are installed is important; see http://git.io/brew-narwhal-ringo.
-brew install ringojs
-brew install narwhal
+# brew install ringojs
+# brew install narwhal
 
 # Install more recent versions of some OS X tools
 brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 brew tap josegonzalez/homebrew-php
-brew install php54
+# brew install php54 -> perfectly happy with MAMP's version(s)
 
 # These two formulae didn’t work well last time I tried them:
 #brew install homebrew/dupes/vim
@@ -36,11 +36,11 @@ brew install php54
 brew install ack
 #brew install exiv2
 brew install git
-#brew install imagemagick
+brew install imagemagick
 brew install lynx
 brew install node
 brew install rename
-brew install rhino
+# brew install rhino
 brew install tree
 brew install webkit2png
 

@@ -17,7 +17,7 @@ function calc() {
 }
 
 # Create a new directory and enter it
-function mkd() {
+function md() {
 	mkdir -p "$@" && cd "$@"
 }
 
@@ -35,6 +35,16 @@ function fs() {
 	fi
 }
 
+# find shorthand
+function f() {
+    find . -name "$1"
+}
+
+# cd into whatever is the forefront Finder window.
+cdf() {  # short for cdfinder
+  cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
+}
+
 # Use Git’s colored diff when available
 hash git &>/dev/null
 if [ $? -eq 0 ]; then
@@ -42,6 +52,38 @@ if [ $? -eq 0 ]; then
 		git diff --no-index --color-words "$@"
 	}
 fi
+
+# git log with per-commit cmd-clickable GitHub URLs (iTerm)
+function gf() {
+  local remote="$(git remote -v | awk '/^origin.*\(push\)$/ {print $2}')"
+  [[ "$remote" ]] || return
+  local user_repo="$(echo "$remote" | perl -pe 's/.*://;s/\.git$//')"
+  git log $* --name-status --color | awk "$(cat <<AWK
+    /^.*commit [0-9a-f]{40}/ {sha=substr(\$2,1,7)}
+    /^[MA]\t/ {printf "%s\thttps://github.com/$user_repo/blob/%s/%s\n", \$1, sha, \$2; next}
+    /.*/ {print \$0}
+AWK
+  )" | less -F
+}
+
+# take this repo and copy it to somewhere else minus the .git stuff.
+function gitexport(){
+	mkdir -p "$1"
+	git archive master | tar -x -C "$1"
+}
+
+# Copy w/ progress
+cp_p () {
+  rsync -WavP --human-readable --progress $1 $2
+}
+
+# get gzipped size
+function gz() {
+	echo "orig size    (bytes): "
+	cat "$1" | wc -c
+	echo "gzipped size (bytes): "
+	gzip -c "$1" | wc -c
+}
 
 # Create a data URL from a file
 function dataurl() {
@@ -162,4 +204,27 @@ function unquarantine() {
 	for attribute in com.apple.metadata:kMDItemDownloadedDate com.apple.metadata:kMDItemWhereFroms com.apple.quarantine; do
 		xattr -r -d "$attribute" "$@"
 	done
+}
+
+# Extract archives - use: extract <file>
+# Credits to http://dotfiles.org/~pseup/.bashrc
+function extract() {
+	if [ -f $1 ] ; then
+		case $1 in
+			*.tar.bz2) tar xjf $1 ;;
+			*.tar.gz) tar xzf $1 ;;
+			*.bz2) bunzip2 $1 ;;
+			*.rar) rar x $1 ;;
+			*.gz) gunzip $1 ;;
+			*.tar) tar xf $1 ;;
+			*.tbz2) tar xjf $1 ;;
+			*.tgz) tar xzf $1 ;;
+			*.zip) unzip $1 ;;
+			*.Z) uncompress $1 ;;
+			*.7z) 7z x $1 ;;
+			*) echo "'$1' cannot be extracted via extract()" ;;
+		esac
+	else
+		echo "'$1' is not a valid file"
+	fi
 }

@@ -9,6 +9,9 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
 done
 unset file
 
+# Init RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
@@ -37,3 +40,7 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi

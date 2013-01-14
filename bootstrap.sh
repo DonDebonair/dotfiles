@@ -16,5 +16,8 @@ fi
 unset doIt
 
 # Add git author info and github credentials to gitconfig
-cat .gitconfig_credentials >> ~/.gitconfig
+if [ -f .gitconfig_credentials ]; then
+    cat .gitconfig_credentials >> ~/.gitconfig
+fi
+
 source ~/.bash_profile

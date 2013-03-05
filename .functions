@@ -77,14 +77,6 @@ cp_p () {
   rsync -WavP --human-readable --progress $1 $2
 }
 
-# get gzipped size
-function gz() {
-	echo "orig size    (bytes): "
-	cat "$1" | wc -c
-	echo "gzipped size (bytes): "
-	gzip -c "$1" | wc -c
-}
-
 # Create a data URL from a file
 function dataurl() {
 	local mimeType=$(file -b --mime-type "$1")

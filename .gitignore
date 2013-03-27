@@ -14,5 +14,4 @@ Thumbs.db
 .Trashes
 
 # Private dotfile
-.extra
 .gitconfig_credentials

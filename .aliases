@@ -19,6 +19,8 @@ alias s="subl ."
 alias o="open"
 alias oo="open ."
 
+alias mci="maven clean install"
+
 alias hosts='sudo $EDITOR /etc/hosts'
 
 # Detect which `ls` flavor is in use

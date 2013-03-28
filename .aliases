@@ -19,7 +19,7 @@ alias s="subl ."
 alias o="open"
 alias oo="open ."
 
-alias mci="maven clean install"
+alias mci="mvn clean install"
 
 alias hosts='sudo $EDITOR /etc/hosts'
 

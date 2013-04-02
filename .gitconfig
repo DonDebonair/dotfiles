@@ -89,8 +89,9 @@
 [url "git@github.com:DandyDev/"]
   insteadOf = "git://github.com/DandyDev/"
 
-[push]
-	default = simple
+# This messes with IntelliJ, so I'll leave it off for now...
+#[push]
+#	default = simple
 
 [branch]
 	autosetuprebase = always

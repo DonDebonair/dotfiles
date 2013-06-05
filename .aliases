@@ -19,6 +19,9 @@ alias s="subl ."
 alias o="open"
 alias oo="open ."
 
+# git aliases that can't be done in .gitconfig
+alias gtr='cd "$(git rev-parse --show-toplevel)"'
+
 alias mci="mvn clean install"
 
 alias hosts='sudo $EDITOR /etc/hosts'

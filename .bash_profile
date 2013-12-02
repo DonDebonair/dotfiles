@@ -46,4 +46,4 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 source virtualenvwrapper.sh
-source ~/.autoenv/activate.sh
+source activate.sh

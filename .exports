@@ -18,7 +18,7 @@ export LESS_TERMCAP_md="$ORANGE"
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
 
-MAVEN_OPTS='-Xms512m -Xmx1024m -XX:PermSize=2048m -XX:MaxPermSize=4096m'
+MAVEN_OPTS='-Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512m'
 
 # For Python virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs

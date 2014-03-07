@@ -2,4 +2,4 @@ pip install virtualenv
 pip install virtualenvwrapper
 mkdir -p $HOME/.virtualenvs
 
-git clone git://github.com/kennethreitz/autoenv.git ~/.autoenv
+pip install autoenv

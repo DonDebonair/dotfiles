@@ -145,11 +145,6 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 	alias "$method"="lwp-request -m '$method'"
 done
 
-# Some Symfony presets
-alias sf='php -dmemory_limit=512M symfony'
-alias cc='sf cc'
-alias deploy='sf project:deploy production --go --rsync-options="-azvC --progress --force --include=core"'
-
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
@@ -160,3 +155,5 @@ alias setjdk16='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
 alias setjdk17='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
 alias setjdk18='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
 
+# Create UUID's
+alias uuid="python -c 'import sys,uuid; sys.stdout.write(uuid.uuid4().hex)' | pbcopy && pbpaste && echo"

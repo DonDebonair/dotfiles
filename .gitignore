@@ -15,3 +15,6 @@ Thumbs.db
 
 # Private dotfile
 .gitconfig_credentials
+
+# Jetbrains IDE stuff
+.idea

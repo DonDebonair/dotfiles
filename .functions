@@ -236,5 +236,3 @@ use_env() {
     fi
   fi
 }
-
-colorclip() { (aha | sed -n '/<pre>/,/<\/pre>/p' | xclip -se clip -t text/html) }

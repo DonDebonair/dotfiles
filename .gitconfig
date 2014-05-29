@@ -97,6 +97,6 @@
 	autosetuprebase = always
 [branch "master"]
 	rebase = true
-[branch "dev"]
+[branch "develop"]
 	rebase = true
 

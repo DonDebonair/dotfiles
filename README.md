@@ -1,13 +1,15 @@
-# Mathias’s dotfiles
+# My dotfiles
+
+These are my dotfiles. Originally they were based on Mathias Bynens' [excellent and famous dotfiles](https://github.com/mathiasbynens/dotfiles), but I changed so much, it's not useful anymore for me to keep the repo as a fork.
 
 ## Installation
 
 ### Using Git and the bootstrap script
 
-You can clone the repository wherever you want. (I like to keep it in `~/Projects/dotfiles`, with `~/dotfiles` as a symlink.) The bootstrapper script will pull in the latest version and copy the files to your home folder.
+You can clone the repository wherever you want. (I like to keep it in `~/projects/tools/dotfiles`, with `~/dotfiles` as a symlink.) The bootstrapper script will pull in the latest version and copy the files to your home folder.
 
 ```bash
-git clone https://github.com/mathiasbynens/dotfiles.git && cd dotfiles && source bootstrap.sh
+git clone https://github.com/DandyDev/dotfiles.git && cd dotfiles && source bootstrap.sh
 ```
 
 To update, `cd` into your local `dotfiles` repository and then:
@@ -27,7 +29,7 @@ set -- -f; source bootstrap.sh
 To install these dotfiles without Git:
 
 ```bash
-cd; curl -#L https://github.com/mathiasbynens/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh}
+cd; curl -#L https://github.com/DandyDev/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh}
 ```
 
 To update later on, just run that command again.
@@ -51,25 +53,20 @@ My `~/.extra` looks something like this:
 ```bash
 # PATH additions
 export PATH="~/bin:$PATH"
-
-# Git credentials
-# Not in the repository, to prevent people from accidentally committing under my name
-GIT_AUTHOR_NAME="Mathias Bynens"
-GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
-git config --global user.name "$GIT_AUTHOR_NAME"
-GIT_AUTHOR_EMAIL="mathias@mailinator.com"
-GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
-git config --global user.email "$GIT_AUTHOR_EMAIL"
 ```
 
-You could also use `~/.extra` to override settings, functions and aliases from my dotfiles repository. It’s probably better to [fork this repository](https://github.com/mathiasbynens/dotfiles/fork_select) instead, though.
+You can also use `~/.extra` to override settings, functions and aliases from my dotfiles repository.
 
-### Sensible OS X defaults
+### Your git author info and credentials
 
-When setting up a new Mac, you may want to set some sensible OS X defaults:
+You can add a `.gitconfig_credentials` file to your _dotfiles_ directory where you can store your git user information and Github credentials. The `bootstrap.sh` script will tack the contents to the `.gitconfig` file it copies. Of course, this file will be ignored in the dotfiles git repository.
+
+### Installing dependencies
+
+Some of these dotfiles depend on certain CLI utilities to be installed (Homebrew etc.) Install those dependencies:
 
 ```bash
-./.osx
+./install-deps.sh
 ```
 
 ### Install Homebrew formulae
@@ -79,6 +76,23 @@ When setting up a new Mac, you may want to install some common Homebrew formulae
 ```bash
 ./.brew
 ```
+
+### Install Python dependencies
+
+Some of these dotfiles assume Python development to be present. To make sure it is, run the following:
+
+```bash
+./.pythondeps
+```
+
+### Sensible OS X defaults
+
+When setting up a new Mac, you may want to set some sensible OS X defaults:
+
+```bash
+./.osx
+```
+
 
 ## Feedback
 

@@ -2,7 +2,7 @@
 
 # homebrew!
 # you need the code CLI tools YOU FOOL.
-ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
 # for the c alias (syntax highlighted cat)
 sudo pip install Pygments

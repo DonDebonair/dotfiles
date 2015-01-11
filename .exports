@@ -1,4 +1,4 @@
-# Make nano the default editor
+# Make Sublime text the default editor
 export EDITOR="subl"
 
 # Larger bash history (allow 32³ entries; default is 500)
@@ -22,3 +22,5 @@ export MAVEN_OPTS='-Xms512m -Xmx1024m'
 
 # For Python virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
+
+export JAVA_HOME="$(/usr/libexec/java_home)"

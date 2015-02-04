@@ -44,3 +44,4 @@ fi
 
 source virtualenvwrapper.sh
 source activate.sh
+eval "$(hub alias -s)"

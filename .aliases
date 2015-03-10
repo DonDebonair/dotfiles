@@ -17,6 +17,7 @@ alias j="jobs"
 alias s="subl ."
 alias o="open"
 alias oo="open ."
+alias iq="ipython qtconsole"
 
 alias mci="mvn clean install"
 

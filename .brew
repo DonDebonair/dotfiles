@@ -24,16 +24,25 @@ brew install homebrew/dupes/grep
 # Install everything else
 brew install ack
 brew install git
-brew install imagemagick
 brew install node
 brew install ngrep
+brew install gnu-sed
 brew install rename
 brew install tree
 brew install webkit2png
 brew install python --framework
 brew install bash-completion
 brew install hub
-brew install gsed
+
+# Install GUI apps through Homebrew Cask
+brew install caskroom/cask/brew-cask
+brew cask install google-chrome
+brew cask install 1password
+brew cask install dropbox
+brew cask install bettertouchtool
+brew tap caskroom/versions
+brew cask install sublime-text3
+brew cask install iterm2
 
 # Remove outdated versions from the cellar
 brew cleanup

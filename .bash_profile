@@ -43,5 +43,4 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 source virtualenvwrapper.sh
-source activate.sh
 eval "$(hub alias -s)"

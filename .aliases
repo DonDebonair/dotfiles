@@ -152,3 +152,7 @@ alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
 # Create UUID's
 alias uuid="uuidgen | tr -d '\n' | tr '[:upper:]' '[:lower:]'  | pbcopy && pbpaste && echo"
+
+# Docker stuff
+alias dm=docker-machine
+alias dco=docker-compose

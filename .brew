@@ -43,6 +43,7 @@ brew cask install bettertouchtool
 brew tap caskroom/versions
 brew cask install sublime-text3
 brew cask install iterm2
+brew cask install virtualbox
 
 # Remove outdated versions from the cellar
 brew cleanup

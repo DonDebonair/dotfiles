@@ -150,10 +150,5 @@ alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
-# Set Java version
-alias setjdk16='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
-alias setjdk17='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
-alias setjdk18='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
-
 # Create UUID's
 alias uuid="uuidgen | tr -d '\n' | tr '[:upper:]' '[:lower:]'  | pbcopy && pbpaste && echo"

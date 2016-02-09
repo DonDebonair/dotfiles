@@ -155,4 +155,4 @@ alias uuid="uuidgen | tr -d '\n' | tr '[:upper:]' '[:lower:]'  | pbcopy && pbpas
 
 # Docker stuff
 alias dm=docker-machine
-alias dco=docker-compose
+alias dc=docker-compose

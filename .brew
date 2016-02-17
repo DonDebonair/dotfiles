@@ -33,6 +33,8 @@ brew install webkit2png
 brew install python --framework
 brew install bash-completion
 brew install hub
+brew install fzf
+brew install fpp
 
 # Install GUI apps through Homebrew Cask
 brew install caskroom/cask/brew-cask

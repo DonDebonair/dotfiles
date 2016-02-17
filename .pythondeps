@@ -9,3 +9,4 @@ pip install Pygments
 
 pip install pipsi
 pipsi install httpie
+pipsi install percol

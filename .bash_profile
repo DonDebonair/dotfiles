@@ -45,3 +45,5 @@ fi
 source virtualenvwrapper.sh
 eval "$(hub alias -s)"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -1,0 +1,5 @@
+#!/bin/bash
+# This hook is run after virtualenv is activated.
+# argument: environment name
+
+RPROMPT="$_OLD_RPROMPT"

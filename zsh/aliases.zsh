@@ -1,10 +1,17 @@
-# Easier navigation: .., ..., ...., ....., ~ and -
+# Easier navigation: .., ..., ...., ..... and -
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
+
+# ZSH-stuff
+alias editdf="subl $DOTFILES"
+alias reload!='. ~/.zshrc' # re-load zshrc config
+alias dot!='${DOTFILES}/install.sh' # re-install dotfiles
+alias adda="subl $DOTFILES/zsh/aliases.zsh" # add alias
+alias addbu="subl $DOTFILES/zsh/bundles.zsh" # add antigen bundle
+alias addbr="subl $DOTFILES/Brewfile" # add brew package
 
 # Shortcuts
 alias d="cd ~/Dropbox"
@@ -12,36 +19,24 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 alias g="git"
-alias h="history"
-alias j="jobs"
 alias s="subl"
 alias o="open"
 alias oo="open ."
 alias iq="ipython qtconsole"
+alias h="http"
 
 alias mci="mvn clean install"
 
-alias hosts='sudo nano /etc/hosts'
-
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
-else # OS X `ls`
-	colorflag="-G"
-fi
+alias hosts='subl /etc/hosts'
 
 # List all files colorized in long format
-alias l="ls -l ${colorflag}"
+alias l="ls -l"
 
 # List all files colorized in long format, including dot files
-alias la="ls -la ${colorflag}"
+alias la="ls -la"
 
 # List only directories
-alias lsd='ls -l ${colorflag} | grep "^d"'
-
-# Always use color output for `ls`
-alias ls="command ls ${colorflag}"
-export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
+alias lsd='ls -l | grep "^d"'
 
 # Use gnu-sed
 alias sed='gsed'
@@ -52,18 +47,12 @@ alias sudo='sudo '
 # Gzip-enabled `curl`
 alias gurl="curl --compressed"
 
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update'
+# Get OS X Software Updates, and update Homebrew, npm, and their installed packages
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g'
 
 # `cat` with beautiful colors. requires Pygments installed.
-# 							   sudo easy_install Pygments
+#                  sudo easy_install Pygments
 alias c='pygmentize -O style=monokai -f console256 -g'
-
-## GIT STUFF
-
-# Undo a `git push`
-alias undopush="git push -f origin HEAD^:master"
-
 
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
@@ -123,11 +112,6 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 # Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
 alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
 
-# Disable Spotlight
-alias spotoff="sudo mdutil -a -i off"
-# Enable Spotlight
-alias spoton="sudo mdutil -a -i on"
-
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
 alias plistbuddy="/usr/libexec/PlistBuddy"
 
@@ -142,13 +126,12 @@ alias map="xargs -n1"
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "$method"="lwp-request -m '$method'"
+  alias "$method"="lwp-request -m '$method'"
 done
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 7'"
-alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
 # Create UUID's
 alias uuid="uuidgen | tr -d '\n' | tr '[:upper:]' '[:lower:]'  | pbcopy && pbpaste && echo"
@@ -156,3 +139,10 @@ alias uuid="uuidgen | tr -d '\n' | tr '[:upper:]' '[:lower:]'  | pbcopy && pbpas
 # Docker stuff
 alias dm=docker-machine
 alias dc=docker-compose
+alias dkill="docker rm -rf $(docker ps -aq)"
+
+# Copy my public SSH key to clipboard
+alias cpk='cat ~/.ssh/id_rsa.pub | pbcopy; echo "Public key copied to clipboard"'
+
+# grep recursively
+alias grepr='grep -R . -e '

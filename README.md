@@ -15,7 +15,7 @@ You can clone the repository wherever you want (I like to keep it in `~/projects
 to get started.
 
 ```bash
-git clone https://github.com/DandyDev/dotfiles.git && cd dotfiles && ./install.sh
+git clone https://github.com/DandyDev/dotfiles.git && cd dotfiles && git submodules init && git submodules update && ./install.sh
 ```
 
 To update, pull the changes and use the `dot!` command to update

@@ -17,7 +17,7 @@ antigen bundle sudo
 
 antigen apply
 
-antigen theme muse
+antigen theme lambda
 
 # history search with UP/DOWN arrows
 antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh

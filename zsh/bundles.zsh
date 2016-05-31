@@ -13,6 +13,7 @@ antigen bundle httpie
 antigen bundle lein
 antigen bundle mvn
 antigen bundle pip
+antigen bundle brew-cask
 antigen bundle sudo
 
 antigen apply

@@ -37,6 +37,7 @@ brew 'ant'
 brew 'maven'
 brew 'sbt'
 brew 'python'
+brew 'python3'
 brew 'node'
 brew 'redis'
 

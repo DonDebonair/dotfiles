@@ -39,3 +39,4 @@ Desktop.ini
 # IDE stuff #
 #############
 .idea
+*.iml

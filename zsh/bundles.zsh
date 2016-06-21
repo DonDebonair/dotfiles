@@ -15,6 +15,7 @@ antigen bundle mvn
 antigen bundle pip
 antigen bundle brew-cask
 antigen bundle sudo
+antigen bundle docker
 
 antigen apply
 

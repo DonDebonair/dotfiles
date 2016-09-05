@@ -146,3 +146,9 @@ alias cpk='cat ~/.ssh/id_rsa.pub | pbcopy; echo "Public key copied to clipboard"
 
 # grep recursively
 alias grepr='grep -R . -e '
+
+# Python stuff
+alias mkpy3virtualenv='mkvirtualenv -p /usr/local/bin/python3'
+
+# Download subs
+alias subd='subliminal download -l en -p opensubtitles'

@@ -139,7 +139,7 @@ alias uuid="uuidgen | tr -d '\n' | tr '[:upper:]' '[:lower:]'  | pbcopy && pbpas
 # Docker stuff
 alias dm=docker-machine
 alias dc=docker-compose
-alias dkill="docker rm -rf $(docker ps -aq)"
+alias dkill='docker rm -f $(docker ps -aq)'
 
 # Copy my public SSH key to clipboard
 alias cpk='cat ~/.ssh/id_rsa.pub | pbcopy; echo "Public key copied to clipboard"'

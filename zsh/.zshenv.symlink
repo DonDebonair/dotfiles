@@ -1,2 +1,2 @@
 export JAVA_HOME="$(/usr/libexec/java_home)"
-export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/projects/tools/spark-2.0.0-bin-hadoop2.7/bin:/$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH"

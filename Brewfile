@@ -31,6 +31,7 @@ brew 'ffmpeg'
 cask 'java' unless system '/usr/libexec/java_home --failfast'
 brew 'git'
 brew 'git-extras'
+brew 'mercurial'
 brew 'node'
 brew 'leiningen'
 brew 'ant'
@@ -40,6 +41,7 @@ brew 'python'
 brew 'python3'
 brew 'node'
 brew 'redis'
+brew 'go', args: ['cross-compile-common']
 
 # GUI
 cask '1password'

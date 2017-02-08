@@ -90,6 +90,9 @@
 [url "git@github.com:DandyDev/"]
   insteadOf = "git://github.com/DandyDev/"
 
+[url "git@github.com:MarktplaatsShowAndTell/iCASComaasDaanDebie"]
+  insteadOf = "https://github.com/MarktplaatsShowAndTell/iCASComaasDaanDebie"
+
 [push]
 	default = simple
 [user]

@@ -6,3 +6,5 @@ export GOROOT=/usr/local/opt/go/libexec
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
 export PATH="$GOROOT/bin:$GOPATH/bin:$HOME/projects/tools/spark-2.0.0-bin-hadoop2.7/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+
+export PATH="`yarn global bin`:$PATH"

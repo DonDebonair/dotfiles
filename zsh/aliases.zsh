@@ -55,7 +55,7 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup
 alias c='pygmentize -O style=monokai -f console256 -g'
 
 # git root
-alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
+alias groot='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

@@ -71,6 +71,9 @@
 [branch "develop"]
 	rebase = true
 
+[branch "master"]
+	rebase = true
+
 # URL shorthands
 [url "git@github.com:"]
 	insteadOf = "gh:"
@@ -89,9 +92,6 @@
 # http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
 [url "git@github.com:DandyDev/"]
   insteadOf = "git://github.com/DandyDev/"
-
-[url "git@github.com:MarktplaatsShowAndTell/iCASComaasDaanDebie"]
-  insteadOf = "https://github.com/MarktplaatsShowAndTell/iCASComaasDaanDebie"
 
 [push]
 	default = simple

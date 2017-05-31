@@ -177,3 +177,15 @@ use_env() {
 }
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
+function use_anaconda() {
+  if ! [[ $PATH =~ ^\/usr\/local\/anaconda3\/bin ]] then;
+    export PATH=/usr/local/anaconda3/bin:$PATH
+  fi
+}
+
+function stop_anaconda() {
+  if [[ $PATH =~ ^\/usr\/local\/anaconda3\/bin ]] then;
+    export PATH=`echo $PATH | sed -e 's/\/usr\/local\/anaconda3\/bin://'`
+  fi
+}

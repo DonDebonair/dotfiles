@@ -8,12 +8,10 @@ antigen bundle virtualenvwrapper
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle djui/alias-tips
 antigen bundle autojump
-antigen bundle brew
 antigen bundle httpie
 antigen bundle lein
 antigen bundle mvn
 antigen bundle pip
-antigen bundle brew-cask
 antigen bundle sudo
 antigen bundle docker
 

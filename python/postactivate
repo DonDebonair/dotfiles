@@ -2,5 +2,7 @@
 # This hook is run after virtualenv is activated.
 # argument: environment name
 
+PY_V=$(python -c 'import platform;v=platform.python_version_tuple();print("%s.%s.%s" % (v))')
+
 _OLD_RPROMPT="$RPROMPT"
-RPROMPT="%{${fg_bold[white]}%}(env: %{${fg[green]}%}`basename \"$VIRTUAL_ENV\"`%{${fg_bold[white]}%})%{${reset_color}%} $RPROMPT"
+RPROMPT="%{${fg_bold[white]}%}(env: %{${fg[green]}%}`basename \"$VIRTUAL_ENV\"`@$PY_V%{${fg_bold[white]}%})%{${reset_color}%} $RPROMPT"

@@ -52,3 +52,5 @@ do
 done
 
 unset config_files
+
+pyenv virtualenvwrapper

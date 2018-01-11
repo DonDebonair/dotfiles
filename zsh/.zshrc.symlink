@@ -38,12 +38,12 @@
 
 export DOTFILES=$HOME/projects/tools/dotfiles
 
-# load antigen
-source $DOTFILES/antigen/antigen.zsh
+# load zgen
+source $DOTFILES/zgen/zgen.zsh
 
 # load all config files
 typeset -U config_files
-config_files=($DOTFILES/**/*.zsh)
+config_files=($DOTFILES/zsh/*.zsh)
 
 # load the path files
 for file in ${config_files}

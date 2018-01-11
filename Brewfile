@@ -4,7 +4,7 @@ tap 'caskroom/cask'
 tap 'homebrew/bundle'
 tap 'caskroom/versions'
 
-# Docker (commented out, trying out Docker for Mac)
+# Docker (commented out, using Docker for Mac now)
 # brew 'docker'
 # brew 'docker-machine'
 # brew 'docker-compose'
@@ -26,6 +26,8 @@ brew 'fzf'
 brew 'fpp'
 brew 'hub'
 brew 'ffmpeg'
+brew 'peco'
+brew 'the_silver_searcher'
 
 # Dev
 cask 'java' unless system '/usr/libexec/java_home --failfast'
@@ -39,6 +41,8 @@ brew 'maven'
 brew 'sbt'
 brew 'python'
 brew 'python3'
+brew 'pyenv'
+brew 'pyenv-virtualenvwrapper'
 brew 'node'
 brew 'redis'
 brew 'go', args: ['cross-compile-common']

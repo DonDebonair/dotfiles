@@ -1,27 +1,28 @@
-antigen use oh-my-zsh
+if ! zgen saved; then
+# Load base oh-my-zsh & plugins & theme
+    zgen oh-my-zsh
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/git-extras
+    zgen oh-my-zsh plugins/autojump
+    zgen oh-my-zsh plugins/httpie
+    zgen oh-my-zsh plugins/lein
+    zgen oh-my-zsh plugins/mvn
+    zgen oh-my-zsh plugins/pip
+    zgen oh-my-zsh plugins/sudo
+    zgen oh-my-zsh plugins/docker
+    zgen oh-my-zsh plugins/pyenv
+    zgen oh-my-zsh themes/lambda
 
-antigen bundle git
-antigen bundle git-extras
-antigen-bundle Tarrasch/zsh-autoenv
-# antigen bundle virtualenv
-# antigen bundle virtualenvwrapper
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle djui/alias-tips
-antigen bundle autojump
-antigen bundle httpie
-antigen bundle lein
-antigen bundle mvn
-antigen bundle pip
-antigen bundle sudo
-antigen bundle docker
-antigen bundle pyenv
+    # Load other plugins
+    zgen load djui/alias-tips
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load zsh-users/zsh-history-substring-search
 
-antigen apply
-
-antigen theme lambda
+    # Save it
+    zgen save
+fi
 
 # history search with UP/DOWN arrows
-antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
 zmodload zsh/terminfo
 bindkey "$terminfo[cuu1]" history-substring-search-up
 bindkey "$terminfo[cud1]" history-substring-search-down

@@ -40,7 +40,10 @@ zmodload zsh/zprof
 export DOTFILES=$HOME/projects/tools/dotfiles
 
 # load zgen
-source $DOTFILES/zgen/zgen.zsh
+zgen () {
+    source $DOTFILES/zgen/zgen.zsh
+    zgen "$@"
+}
 
 # load all config files
 typeset -U config_files

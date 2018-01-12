@@ -19,6 +19,7 @@ if ! zgen saved; then
 
     # Save it
     zgen save
+    zcompile ${HOME}/.zgen/init.zsh
 fi
 
 # history search with UP/DOWN arrows

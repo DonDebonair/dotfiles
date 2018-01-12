@@ -1,3 +1,4 @@
+zmodload zsh/zprof
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -53,4 +54,5 @@ done
 
 unset config_files
 
-pyenv virtualenvwrapper
+eval "$(pyenv init - zsh --no-rehash)"
+pyenv virtualenvwrapper_lazy

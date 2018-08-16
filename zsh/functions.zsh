@@ -189,3 +189,8 @@ function stop_anaconda() {
     export PATH=`echo $PATH | sed -e 's/\/usr\/local\/anaconda3\/bin://'`
   fi
 }
+
+# Kill process
+function killp() {
+  ps aux | percol | awk '{ print $2 }' | xargs kill
+}

@@ -57,5 +57,10 @@ done
 
 unset config_files
 
+export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
+
 eval "$(pyenv init - zsh --no-rehash)"
 pyenv virtualenvwrapper_lazy
+
+eval "$(direnv hook zsh)"
+

@@ -97,7 +97,7 @@
 	default = simple
 [user]
 	name = Daan Debie
-	email = debie.daan@gmail.com
+	email = daan.debie@klm.com
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

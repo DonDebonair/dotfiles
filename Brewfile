@@ -4,11 +4,6 @@ tap 'caskroom/cask'
 tap 'homebrew/bundle'
 tap 'caskroom/versions'
 
-# Docker (commented out, using Docker for Mac now)
-# brew 'docker'
-# brew 'docker-machine'
-# brew 'docker-compose'
-
 # Utils
 brew 'zsh'
 brew 'openssl'
@@ -46,6 +41,7 @@ brew 'pyenv-virtualenvwrapper'
 brew 'node'
 brew 'redis'
 brew 'go', args: ['cross-compile-common']
+brew 'direnv'
 
 # GUI
 cask '1password'

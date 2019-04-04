@@ -5,13 +5,17 @@ export GOROOT=/usr/local/opt/go/libexec
 # Java
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
-export PATH="$GOROOT/bin:$GOPATH/bin:$HOME/projects/tools/secury-dev-proxy/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+PATH="$GOROOT/bin:$GOPATH/bin:$HOME/projects/tools/secure-dev-proxy/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
-export PATH="`yarn global bin`:$PATH"
-export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
+PATH="`yarn global bin`:$PATH"
+
+# Gurobi
+export GUROBI_HOME=/Library/gurobi810/mac64/
 
 # Conscript
 
 export CONSCRIPT_HOME="$HOME/.conscript"
 export CONSCRIPT_OPTS="-XX:MaxPermSize=512M -Dfile.encoding=UTF-8"
-export PATH=$CONSCRIPT_HOME/bin:$PATH
+PATH=$CONSCRIPT_HOME/bin:$PATH
+
+export PATH

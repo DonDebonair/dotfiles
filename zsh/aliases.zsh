@@ -141,6 +141,7 @@ alias dm=docker-machine
 alias dc=docker-compose
 alias dkill='docker rm -f $(docker ps -q)'
 alias dkillall='docker rm -f $(docker ps -aq)'
+alias dclean='docker rm -f $(docker ps -f "status=exited" -q)'
 
 # Copy my public SSH key to clipboard
 alias cpk='cat ~/.ssh/id_rsa.pub | pbcopy; echo "Public key copied to clipboard"'

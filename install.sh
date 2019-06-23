@@ -12,8 +12,7 @@ success () {
 }
 
 install_brew() {
-  info "installing brew"
-  brew tap Homebrew/bundle
+  info "installing brew packages"
   cd "$DOTFILES_ROOT"
   brew bundle
 }

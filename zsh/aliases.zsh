@@ -19,10 +19,10 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 alias g="git"
-alias s="subl"
+alias e="subl"
+alias ee="e ."
 alias o="open"
 alias oo="open ."
-alias iq="ipython qtconsole"
 alias h="http"
 
 alias mci="mvn clean install"
@@ -137,7 +137,6 @@ alias pumpitup="osascript -e 'set volume 7'"
 alias uuid="uuidgen | tr -d '\n' | tr '[:upper:]' '[:lower:]'  | pbcopy && pbpaste && echo"
 
 # Docker stuff
-alias dm=docker-machine
 alias dc=docker-compose
 alias dkill='docker rm -f $(docker ps -q)'
 alias dkillall='docker rm -f $(docker ps -aq)'
@@ -149,8 +148,8 @@ alias cpk='cat ~/.ssh/id_rsa.pub | pbcopy; echo "Public key copied to clipboard"
 # grep recursively
 alias grepr='grep -R . -e '
 
-# Python stuff
-alias mkpy3virtualenv='mkvirtualenv -p /usr/local/bin/python3'
-
 # Download subs
 alias subd='subliminal download -l en -p opensubtitles'
+
+# Login to KLM Kubernetes
+alias kubelogin='curl -u klm85902 -o /tmp/odsklm-amsica1902 -s "https://squirrel.klm.nl/v1/auth/kubeconfig/odsklm/amsica1902" && export KUBECONFIG=/tmp/odsklm-amsica1902'

@@ -1,8 +1,6 @@
 cask_args appdir: '/Applications'
 
-tap 'caskroom/cask'
-tap 'homebrew/bundle'
-tap 'caskroom/versions'
+tap 'homebrew/cask-versions'
 
 # Utils
 brew 'zsh'
@@ -52,7 +50,7 @@ cask 'dropbox'
 cask 'dropshare'
 cask 'evernote'
 cask 'google-chrome'
-cask 'iina'
+cask 'iina-beta'
 cask 'iterm2-beta'
 cask 'jetbrains-toolbox'
 cask 'karabiner-elements'

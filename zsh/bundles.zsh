@@ -10,6 +10,7 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/pip
     zgen oh-my-zsh plugins/sudo
     zgen oh-my-zsh plugins/docker
+    zgen oh-my-zsh plugins/kubectl
     zgen oh-my-zsh themes/lambda
 
     # Load other plugins

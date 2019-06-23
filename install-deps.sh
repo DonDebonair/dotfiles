@@ -16,5 +16,10 @@ else
 fi
 
 # This won't work if your Homebrew prefix is different
-echo "Adding Homebrew zsh to login shell options (/etc/shells)..."
-sudo sh -c 'echo "/usr/local/bin/zsh" >> /etc/shells'
+HOMEBREW_ZSH_PATH="$(brew --prefix)/bin/zsh"
+if ! grep -Fxq "$HOMEBREW_ZSH_PATH" /etc/shells; then
+	echo "Adding Homebrew zsh ($HOMEBREW_ZSH_PATH) to login shell options (/etc/shells)..."
+	sudo sh -c 'echo "$(brew --prefix)/bin/zsh" >> /etc/shells'
+else
+	echo "Homebrew zsh already in login shell options (/etc/shells)..."
+fi

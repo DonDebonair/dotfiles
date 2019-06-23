@@ -37,17 +37,18 @@ zmodload zsh/zprof
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-export DOTFILES=$HOME/projects/tools/dotfiles
+export DOTFILES_HELPERS=$HOME/.dotfiles
+export DOTFILES_SOURCE=$HOME/.local/share/chezmoi
 
 # load zgen
 zgen () {
-    source $DOTFILES/zgen/zgen.zsh
+    source $DOTFILES_HELPERS/zgen/zgen.zsh
     zgen "$@"
 }
 
 # load all config files
 typeset -U config_files
-config_files=($DOTFILES/zsh/*.zsh)
+config_files=($DOTFILES_HELPERS/zsh/*.zsh)
 
 # load the path files
 for file in ${config_files}
@@ -63,4 +64,3 @@ eval "$(pyenv init - zsh --no-rehash)"
 pyenv virtualenvwrapper_lazy
 
 eval "$(direnv hook zsh)"
-

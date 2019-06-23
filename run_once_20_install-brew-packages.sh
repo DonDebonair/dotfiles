@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+
+cat <<EOF | brew bundle --file=/dev/stdin
 cask_args appdir: '/Applications'
 
 tap 'homebrew/cask-versions'
@@ -21,6 +24,7 @@ brew 'hub'
 brew 'ffmpeg'
 brew 'peco'
 brew 'the_silver_searcher'
+brew 'ripgrep'
 
 # Dev
 cask 'java8' unless system '/usr/libexec/java_home --failfast'
@@ -63,3 +67,4 @@ cask 'transmission'
 cask 'typora'
 # cask 'virtualbox'
 cask 'vlc'
+EOF

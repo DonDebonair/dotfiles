@@ -1,4 +1,4 @@
-# up to you (me) if you want to run this as a file or copy paste at your leisure
+#!/bin/sh
 
 # Ask for the administrator password upfront
 sudo -v
@@ -23,3 +23,10 @@ if ! grep -Fxq "$HOMEBREW_ZSH_PATH" /etc/shells; then
 else
 	echo "Homebrew zsh already in login shell options (/etc/shells)..."
 fi
+
+# Remove chezmoi so we can use the homebrew version
+if [[ -f "$HOME/bin/chezmoi" ]]; then
+    echo "Replace $HOME/bin/chezmoi with Homebrew version"
+    rm "$HOME/bin/chezmoi"
+fi
+brew install twpayne/taps/chezmoi

@@ -97,7 +97,11 @@
 	default = simple
 [user]
 	name = Daan Debie
+{{- if eq .chezmoi.hostname "daan-klm" }}
 	email = daan.debie@klm.com
+{{ else }}
+	email = debie.daan@gmail.com
+{{ end -}}
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process

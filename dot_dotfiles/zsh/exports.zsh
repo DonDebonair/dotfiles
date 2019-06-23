@@ -13,4 +13,4 @@ export WORKON_HOME=$HOME/.virtualenvs
 export LANG="en_US"
 export LC_ALL="en_US.UTF-8"
 
-export EDITOR="subl"
+export EDITOR="code"

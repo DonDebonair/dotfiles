@@ -37,6 +37,8 @@ brew 'ant'
 brew 'maven'
 brew 'sbt'
 brew 'python'
+# for mercurial and fpp
+brew 'python@2'
 brew 'pyenv'
 brew 'pyenv-virtualenvwrapper'
 brew 'redis'

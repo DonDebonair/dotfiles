@@ -14,4 +14,3 @@ else
   success "changing default shell to kick-ass ZSH"
   chsh -s $(which zsh)
 fi
-# install_python_stuff

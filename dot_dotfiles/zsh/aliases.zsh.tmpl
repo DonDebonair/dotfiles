@@ -8,7 +8,7 @@ alias -- -="cd -"
 # ZSH-stuff
 alias editdf="$EDITOR $DOTFILES_SOURCE"
 alias reload!='. ~/.zshrc' # re-load zshrc config
-alias dot!='$DOTFILES_HELPERS/install.sh' # re-install dotfiles
+alias dot!='chezmoi apply' # re-install dotfiles
 alias adda="$EDITOR $DOTFILES_SOURCE/dot_dotfiles/zsh/aliases.zsh" # add alias
 alias addbu="$EDITOR $DOTFILES_SOURCE/dot_dotfiles/zsh/bundles.zsh" # add antigen bundle
 alias addbr="$EDITOR $DOTFILES_SOURCE/dot_dotfiles/Brewfile" # add brew package
@@ -19,15 +19,15 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 alias g="git"
-alias e="subl"
-alias ee="e ."
+alias e="$EDITOR"
+alias ee="$EDITOR ."
 alias o="open"
 alias oo="open ."
 alias h="http"
 
 alias mci="mvn clean install"
 
-alias hosts='subl /etc/hosts'
+alias hosts=" $EDITOR /etc/hosts"
 
 # List all files colorized in long format
 alias l="ls -l"
@@ -150,7 +150,7 @@ alias grepr='grep -R . -e '
 
 # Download subs
 alias subd='subliminal download -l en -p opensubtitles'
-{{ if eq .chezmoi.hostname "daan-private" }}
+{{ if eq .chezmoi.hostname "daan-klm" }}
 # Login to KLM Kubernetes
 alias kubelogin='curl -u klm85902 -o /tmp/odsklm-amsica1902 -s "https://squirrel.klm.nl/v1/auth/kubeconfig/odsklm/amsica1902" && export KUBECONFIG=/tmp/odsklm-amsica1902'
 {{ end }}

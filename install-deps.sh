@@ -15,7 +15,7 @@ else
     brew update
 fi
 
-# This won't work if your Homebrew prefix is different
+# Add Homebrew ZSH to login shell options
 HOMEBREW_ZSH_PATH="$(brew --prefix)/bin/zsh"
 if ! grep -Fxq "$HOMEBREW_ZSH_PATH" /etc/shells; then
 	echo "Adding Homebrew zsh ($HOMEBREW_ZSH_PATH) to login shell options (/etc/shells)..."

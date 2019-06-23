@@ -1,16 +1,32 @@
 #!/usr/bin/env bash
 
+echo "Setting up virtualenvwrapper and prompt..."
+
 # Set the path, because this might be the first time the script is run, before zsh is configured
 # We want to use the Homebrew Python we just installed
 export PATH="$HOME/bin:$HOME/.local/bin:$(brew --prefix)/opt/python/libexec/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 export WORKON_HOME=$HOME/.virtualenvs
 
-pip install --upgrade pip
-pip install --upgrade setuptools
-pip install virtualenv
-pip install virtualenvwrapper
+export PIP_REQUIRE_VIRTUALENV=false
+which -s pyenv
+if [[ $? == 0 ]] ; then
+    PY_VERSION=$(pyenv version-name)
+    pyenv global system
+    pip install --upgrade pip
+    pip install --upgrade setuptools
+    pip install virtualenv
+    pip install virtualenvwrapper
+    pyenv global $PY_VERSION
+else
+    pip install --upgrade pip
+    pip install --upgrade setuptools
+    pip install virtualenv
+    pip install virtualenvwrapper
+fi
+
 mkdir -p $WORKON_HOME
+export PIP_REQUIRE_VIRTUALENV=true
 
 cat << ACTEOF > "$WORKON_HOME/postactivate"
 #!/bin/bash

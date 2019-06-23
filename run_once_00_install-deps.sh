@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "Installing bare necessities..."
+
 # Ask for the administrator password upfront
 sudo -v
 

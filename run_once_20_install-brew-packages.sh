@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "Installing Homebrew packages and casks..."
+
 cat <<EOF | brew bundle --file=/dev/stdin
 cask_args appdir: '/Applications'
 
@@ -25,6 +27,7 @@ brew 'ffmpeg'
 brew 'peco'
 brew 'the_silver_searcher'
 brew 'ripgrep'
+brew 'twpayne/taps/chezmoi'
 
 # Dev
 cask 'java8' unless system '/usr/libexec/java_home --failfast'
@@ -44,7 +47,6 @@ brew 'pyenv-virtualenvwrapper'
 brew 'redis'
 brew 'go', args: ['cross-compile-common']
 brew 'direnv'
-brew 'twpayne/taps/chezmoi'
 
 # GUI
 cask '1password'

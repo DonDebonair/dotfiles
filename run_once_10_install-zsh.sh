@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "Setting ZSH as default shell..."
+
 set -e
 
 success () {

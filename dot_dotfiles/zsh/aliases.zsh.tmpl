@@ -6,10 +6,10 @@ alias .....="cd ../../../.."
 alias -- -="cd -"
 
 # ZSH-stuff
-alias editdf="$EDITOR $DOTFILES_SOURCE"
+alias editdf="$EDITOR $(chezmoi source-path)"
 alias reload!='. ~/.zshrc' # re-load zshrc config
 alias dot!='chezmoi apply' # re-install dotfiles
-alias adda="$EDITOR $DOTFILES_SOURCE/dot_dotfiles/zsh/aliases.zsh" # add alias
+alias adda="$EDITOR $(chezmoi source-path)/dot_dotfiles/zsh/aliases.zsh" # add alias
 alias addbu="$EDITOR $DOTFILES_SOURCE/dot_dotfiles/zsh/bundles.zsh" # add antigen bundle
 alias addbr="$EDITOR $DOTFILES_SOURCE/dot_dotfiles/Brewfile" # add brew package
 

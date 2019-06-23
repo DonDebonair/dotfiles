@@ -1,58 +1,46 @@
 # My dotfiles
 
-These are my dotfiles for an awesome ZSH-based environment! I used to be Bash-using plebs, but I've seen the light and now I'm 
-using ZSH. The old dotfiles are still there in the [`old-bash`](https://github.com/DandyDev/dotfiles/tree/old-bash) branch.
-
-These dotfiles are inspired by, and to some extend shamelessly copied from my friend 
-[Marcel's amazing dotfiles](https://github.com/mkrcah/dotfiles). I took the good parts of my old Bash dotfiles and added them 
-to the mix.
+These are my dotfiles for an awesome ZSH-based environment that supports customized installations on multiple machines! 
+I now use [chezmoi](https://github.com/twpayne/chezmoi) for managing my dotfiles, so I can have dynamic dotfiles based 
+on the environment/machine I'm working on. The old manually managed dotfiles are still there in the 
+[`old-single-machine-setup`](https://github.com/DandyDev/dotfiles/tree/old-single-machine-setup) branch.
 
 ## Installation
 
 ### Get the goods
 
-You can clone the repository wherever you want (I like to keep it in `~/projects/tools/dotfiles`) and run the `install.sh` script 
-to get started.
+You can bootstrap these dotfiles on a fresh machine as follows:
 
 ```bash
-git clone https://github.com/DandyDev/dotfiles.git && cd dotfiles && git submodules init && git submodules update && ./install.sh
+curl -sfL https://git.io/chezmoi | sh
+chezmoi init https://github.com/DandyDev/dotfiles
+# or if you're me and you have write access to this repo:
+chezmoi init git@github.com:DandyDev/dotfiles.git
+chezmoi apply
 ```
 
-To update, pull the changes and use the `dot!` command to update
+To update:
 
 ```zsh
-cd $DOTFILES && git pull && dot!
-```
-
-### Installing dependencies
-
-Some of these dotfiles depend on certain CLI utilities to be installed (Homebrew etc.) Install those dependencies:
-
-```zsh
-./install-deps.sh
-```
-
-### Sensible OS X defaults
-
-When setting up a new Mac, you may want to set some sensible OS X defaults:
-
-```zsh
-./.osx
+chezmoi update
 ```
 
 ## Usage
 
-When you make changes to anything in the `zsh` dir, reloading the configuration is enough:
+When you make changes to any zsh-related file managed by `chezmoi`, reloading the configuration is enough:
 
 ```zsh
 reload!
 ```
 
-When you add Python packages (in the `python` dir) or Homebrew packages (in the `Brewfile`), you need to reinstall again:
+When you add Python packages (in the `run_once_40_pipx.sh` script) or Homebrew packages 
+(in the `run_once_install-brew-packages.sh` script), you need to reinstall again:
 
 ```zsh
 dot! && reload!
 ```
+
+(`dot!` is short for `chezmoi apply`)
 
 
 ## Feedback

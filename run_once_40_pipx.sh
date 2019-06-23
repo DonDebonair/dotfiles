@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
 
-pip install pipx
+echo "Installing pipx..."
 
-pipx install httpie
-pipx install percol
-pipx install Pygments
-pipx install stormssh
+export PIP_REQUIRE_VIRTUALENV=false
+which -s pyenv
+if [[ $? == 0 ]] ; then
+    PY_VERSION=$(pyenv version-name)
+    pyenv global system
+    pip install pipx
+    pyenv global "$PY_VERSION"
+else
+    pip install pipx
+fi
+export PIP_REQUIRE_VIRTUALENV=true

@@ -38,7 +38,6 @@ zmodload zsh/zprof
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 export DOTFILES_HELPERS=$HOME/.dotfiles
-export DOTFILES_SOURCE=$HOME/.local/share/chezmoi
 
 # load zgen
 zgen () {

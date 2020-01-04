@@ -24,6 +24,7 @@ alias ee="$EDITOR ."
 alias o="open"
 alias oo="open ."
 alias h="http"
+alias typora="open -a typora"
 
 alias mci="mvn clean install"
 
@@ -150,7 +151,7 @@ alias grepr='grep -R . -e '
 
 # Download subs
 alias subd='subliminal download -l en -p opensubtitles'
-{{ if eq .chezmoi.hostname "daan-klm" }}
+{{ if eq .chezmoi.hostname "aplklak085902" }}
 # Login to KLM Kubernetes
 alias kubelogin='curl -u klm85902 -o /tmp/odsklm-amsica1902 -s "https://squirrel.klm.nl/v1/auth/kubeconfig/odsklm/amsica1902" && export KUBECONFIG=/tmp/odsklm-amsica1902'
 {{ end }}

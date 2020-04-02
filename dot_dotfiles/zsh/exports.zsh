@@ -12,3 +12,6 @@ export WORKON_HOME=$HOME/.virtualenvs
 # Prefer US English and use UTF-8
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
+
+# I make my own promts
+export VIRTUAL_ENV_DISABLE_PROMPT=1

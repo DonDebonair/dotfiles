@@ -192,3 +192,11 @@ function stop_anaconda() {
 function killp() {
   ps aux | percol | awk '{ print $2 }' | xargs kill
 }
+
+{{ if eq .chezmoi.hostname "APLKLAK085902" }}
+# Login to KLM Kubernetes
+function kubelogin () {
+  kube_env="$1"
+  curl -u klm85902 -o /tmp/odsklm-$kube_env -s "https://squirrel.klm.nl/v1/auth/kubeconfig/odsklm/$kube_env" && export KUBECONFIG=/tmp/odsklm-$kube_env
+}
+{{ end }}

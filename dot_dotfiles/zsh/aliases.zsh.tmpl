@@ -151,7 +151,3 @@ alias grepr='grep -R . -e '
 
 # Download subs
 alias subd='subliminal download -l en -p opensubtitles'
-{{ if eq .chezmoi.hostname "APLKLAK085902" }}
-# Login to KLM Kubernetes
-alias kubelogin='curl -u klm85902 -o /tmp/odsklm-amsica2002 -s "https://squirrel.klm.nl/v1/auth/kubeconfig/odsklm/amsica2002" && export KUBECONFIG=/tmp/odsklm-amsica2002'
-{{ end }}

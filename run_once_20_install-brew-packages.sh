@@ -27,7 +27,8 @@ brew 'ffmpeg'
 brew 'peco'
 brew 'the_silver_searcher'
 brew 'ripgrep'
-brew 'twpayne/taps/chezmoi'
+brew 'chezmoi'
+brew 'pipx'
 
 # Dev
 cask 'adoptopenjdk'

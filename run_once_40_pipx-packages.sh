@@ -7,3 +7,4 @@ pipx install percol
 pipx install Pygments
 pipx install stormssh
 pipx install pre-commit
+pipx install poetry

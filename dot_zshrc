@@ -59,7 +59,22 @@ unset config_files
 
 export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
 
-eval "$(pyenv init - zsh --no-rehash)"
-pyenv virtualenvwrapper_lazy
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+eval "$(pyenv virtualenv-init -)"
 
 eval "$(direnv hook zsh)"
+
+export BASE_RPROMPT=$RPROMPT
+function update_prompt {
+    if [[ ! -z "$PYENV_VIRTUAL_ENV" ]]; then
+        PY_V=$(python -c 'import platform;v=platform.python_version_tuple();print("%s.%s.%s" % (v))')
+        export RPROMPT="%{${fg_bold[white]}%}(env: %{${fg[green]}%}`basename \"$PYENV_VIRTUAL_ENV\"`@$PY_V%{${fg_bold[white]}%})%{${reset_color}%} $BASE_RPROMPT" 
+    else
+        export RPROMPT=$BASE_RPROMPT
+    fi
+}
+precmd_functions+=update_prompt
+update_prompt

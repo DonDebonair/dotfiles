@@ -158,45 +158,9 @@ function extract() {
   fi
 }
 
-use_env() {
-  typeset venv
-  venv="$1"
-  if [[ `basename "${VIRTUAL_ENV:t}"` != "$venv" ]]; then
-    if workon | grep $venv > /dev/null; then
-      workon "$venv"
-    else
-      echo -n "Create virtualenv $venv now? (Yn) "
-      read answer
-      if [[ "$answer" == "Y" ]]; then
-        mkvirtualenv "$venv"
-      fi
-    fi
-  fi
-}
-
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
-
-function use_anaconda() {
-  if ! [[ $PATH =~ ^\/usr\/local\/anaconda3\/bin ]] then;
-    export PATH=/usr/local/anaconda3/bin:$PATH
-  fi
-}
-
-function stop_anaconda() {
-  if [[ $PATH =~ ^\/usr\/local\/anaconda3\/bin ]] then;
-    export PATH=`echo $PATH | sed -e 's/\/usr\/local\/anaconda3\/bin://'`
-  fi
-}
 
 # Kill process
 function killp() {
   ps aux | percol | awk '{ print $2 }' | xargs kill
 }
-
-{{ if eq .chezmoi.hostname "APLKLAK085902" }}
-# Login to KLM Kubernetes
-function kubelogin () {
-  kube_env="$1"
-  curl -u klm85902 -o /tmp/odsklm-$kube_env -s "https://squirrel.klm.nl/v1/auth/kubeconfig/odsklm/$kube_env" && export KUBECONFIG=/tmp/odsklm-$kube_env
-}
-{{ end }}

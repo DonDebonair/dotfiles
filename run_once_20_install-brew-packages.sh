@@ -29,6 +29,7 @@ brew 'the_silver_searcher'
 brew 'ripgrep'
 brew 'chezmoi'
 brew 'pipx'
+brew 'git-filter-repo'
 
 # Dev
 cask 'adoptopenjdk'

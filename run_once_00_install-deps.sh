@@ -31,4 +31,3 @@ if [[ -f "$HOME/bin/chezmoi" ]]; then
     echo "Replace $HOME/bin/chezmoi with Homebrew version"
     rm "$HOME/bin/chezmoi"
 fi
-brew install twpayne/taps/chezmoi

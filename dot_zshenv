@@ -4,13 +4,12 @@ export EDITOR="code"
 export PIP_REQUIRE_VIRTUALENV=true
 
 # Go
-export GOPATH=$HOME/projects/golang
 export GOROOT=/usr/local/opt/go/libexec
 
 # Java
 export JAVA_HOME="$(/usr/libexec/java_home)"
 
-PATH="$GOROOT/bin:$GOPATH/bin:$HOME/projects/tools/secure-dev-proxy/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+PATH="$GOROOT/bin:$HOME/projects/tools/secure-dev-proxy/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 PATH="`yarn global bin`:$PATH"
 

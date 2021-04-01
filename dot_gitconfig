@@ -103,3 +103,6 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+
+[includeIf "gitdir:~/projects/source.ag/"]
+    path = ~/.gitconfig-source

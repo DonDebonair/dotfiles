@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+echo "Setting ZSH as default shell..."
+
+set -e
+
+success () {
+  printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
+
+{{ if eq .chezmoi.os "darwin" }}
+# Add Homebrew ZSH to login shell options
+HOMEBREW_ZSH_PATH="$(brew --prefix)/bin/zsh"
+if ! grep -Fxq "$HOMEBREW_ZSH_PATH" /etc/shells; then
+	echo "Adding Homebrew zsh ($HOMEBREW_ZSH_PATH) to login shell options (/etc/shells)..."
+	sudo sh -c 'echo "$(brew --prefix)/bin/zsh" >> /etc/shells'
+else
+	echo "Homebrew zsh already in login shell options (/etc/shells)..."
+fi
+
+DEFAULT_SHELL=$(basename $(dscl . -read /Users/$(whoami) UserShell | cut -f2 -d" "))
+{{ else }}
+DEFAULT_SHELL=$(basename $(grep ^$(id -un): /etc/passwd | cut -d : -f 7-))
+{{ end }}
+
+if [ "$DEFAULT_SHELL" == "zsh" ]
+then
+  success "default shell already set to ZSH"
+else
+  success "changing default shell to kick-ass ZSH"
+  chsh -s $(which zsh)
+fi

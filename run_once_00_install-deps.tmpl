@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo "Installing bare necessities..."
+
+# Ask for the administrator password upfront
+sudo -v
+
+{{ if eq .chezmoi.os "darwin" }}
+{{   include "darwin-deps.sh" }}
+{{ else }}
+{{   include "linux-deps.sh" }}
+{{ end }}

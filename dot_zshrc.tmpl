@@ -57,7 +57,9 @@ done
 
 unset config_files
 
+{{ if eq .chezmoi.os "darwin" }}
 export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
+{{ end }}
 
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"

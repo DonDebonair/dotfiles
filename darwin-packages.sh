@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 echo "Installing Homebrew packages and casks..."
 
 cat <<EOF | brew bundle --file=/dev/stdin

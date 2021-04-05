@@ -1,0 +1,15 @@
+{{ if eq .chezmoi.os "darwin" }}
+keybindings=/usr/local/opt/fzf/shell/key-bindings.zsh
+completion=/usr/local/opt/fzf/shell/completion.zsh
+{{ else }}
+keybindings=/usr/share/doc/fzf/examples/key-bindings.zsh
+completion=/usr/share/doc/fzf/examples/completion.zsh
+{{ end }}
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "$completion" 2> /dev/null
+
+# Key bindings
+# ------------
+source "$keybindings"
+

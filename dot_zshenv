@@ -1,4 +1,4 @@
-export EDITOR="code"
+export EDITOR="codium"
 
 # Python
 export PIP_REQUIRE_VIRTUALENV=true

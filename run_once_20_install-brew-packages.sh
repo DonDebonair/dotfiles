@@ -73,4 +73,5 @@ cask 'transmission'
 cask 'typora'
 cask 'virtualbox'
 cask 'vlc'
+cask 'vscodium'
 EOF

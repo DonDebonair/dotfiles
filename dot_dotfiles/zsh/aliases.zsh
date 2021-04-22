@@ -138,7 +138,7 @@ alias pumpitup="osascript -e 'set volume 7'"
 alias uuid="uuidgen | tr -d '\n' | tr '[:upper:]' '[:lower:]'  | pbcopy && pbpaste && echo"
 
 # Docker stuff
-alias dc=docker-compose
+alias dc='docker compose'
 alias dkill='docker rm -f $(docker ps -q)'
 alias dkillall='docker rm -f $(docker ps -aq)'
 alias dclean='docker rm -f $(docker ps -f "status=exited" -q)'

@@ -5,13 +5,13 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"
 
-# ZSH-stuff
+# Dotfiles stuff
 alias editdf="$EDITOR $(chezmoi source-path)"
+alias dotcd="cd $(chezmoi source-path)"
 alias reload!='. ~/.zshrc' # re-load zshrc config
-alias dot!='chezmoi apply' # re-install dotfiles
+alias dot!='chezmoi apply && zgen reset' # re-install dotfiles
 alias adda="$EDITOR $(chezmoi source-path)/dot_dotfiles/zsh/aliases.zsh" # add alias
-alias addbu="$EDITOR $DOTFILES_SOURCE/dot_dotfiles/zsh/bundles.zsh" # add antigen bundle
-alias addbr="$EDITOR $DOTFILES_SOURCE/dot_dotfiles/Brewfile" # add brew package
+alias addbu="$EDITOR $DOTFILES_SOURCE/dot_dotfiles/zsh/bundles.zsh" # add zgen bundle
 
 # Shortcuts
 alias d="cd ~/Dropbox"
@@ -28,7 +28,7 @@ alias typora="open -a typora"
 
 alias mci="mvn clean install"
 
-alias hosts=" $EDITOR /etc/hosts"
+alias hosts="$EDITOR /etc/hosts"
 
 # List all files colorized in long format
 alias l="ls -l"

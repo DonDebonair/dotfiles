@@ -34,7 +34,12 @@ export CONSCRIPT_OPTS="-XX:MaxPermSize=512M -Dfile.encoding=UTF-8"
 PATH=$CONSCRIPT_HOME/bin:$PATH
 
 # More PATH stuff
-PATH="$GOROOT/bin:$HOME/bin:$HOME/.pyenv/bin:$HOME/.cargo/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+PATH="$PYENV_ROOT/bin:$PATH"
+PATH="$GOROOT/bin:$HOME/bin:$HOME/.cargo/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 PATH="`yarn global bin`:$PATH"
 
 export PATH
+
+# Pyenv stuff
+eval "$(pyenv init --path)"

@@ -3,11 +3,6 @@ function md() {
   mkdir -p "$@" && cd "$@"
 }
 
-# Initialize and start boot2docker and prepare shell
-function dockerenv() {
-  eval "$(docker-machine env dev)"
-}
-
 # Determine size of a file or total size of a directory
 function fs() {
   if du -b /dev/null > /dev/null 2>&1; then
@@ -41,7 +36,7 @@ if [ $? -eq 0 ]; then
 fi
 
 # git log with per-commit cmd-clickable GitHub URLs (iTerm)
-function gf() {
+function ghlog() {
   local remote="$(git remote -v | awk '/^origin.*\(push\)$/ {print $2}')"
   [[ "$remote" ]] || return
   local user_repo="$(echo "$remote" | perl -pe 's/.*://;s/\.git$//')"
@@ -103,11 +98,6 @@ function json() {
   else # pipe
     python -mjson.tool | pygmentize -l javascript
   fi
-}
-
-# All the dig info
-function digga() {
-  dig +nocmd "$1" any +multiline +noall +answer
 }
 
 # Escape UTF-8 characters into their 3-byte format

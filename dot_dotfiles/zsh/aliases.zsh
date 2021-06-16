@@ -8,8 +8,8 @@ alias -- -="cd -"
 # Dotfiles stuff
 alias editdf="$EDITOR $(chezmoi source-path)"
 alias dotcd="cd $(chezmoi source-path)"
-alias reload!='. ~/.zshrc' # re-load zshrc config
-alias dot!='chezmoi apply && zgen reset' # re-install dotfiles
+alias reload!='. ~/.zshenv && . ~/.zshrc' # re-load zshrc config
+alias dot!='chezmoi apply && zgen reset && reload!' # re-install dotfiles
 alias adda="$EDITOR $(chezmoi source-path)/dot_dotfiles/zsh/aliases.zsh" # add alias
 alias addbu="$EDITOR $DOTFILES_SOURCE/dot_dotfiles/zsh/bundles.zsh" # add zgen bundle
 

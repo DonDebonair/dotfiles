@@ -11,7 +11,7 @@ export MANPAGER="less -X"
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-export EDITOR="codium"
+export EDITOR="subl"
 export PAGER="less -R"
 
 # Python
@@ -33,6 +33,11 @@ export JAVA_HOME=$(dirname $(dirname $(update-alternatives --query java | grep B
 export CONSCRIPT_HOME="$HOME/.conscript"
 export CONSCRIPT_OPTS="-XX:MaxPermSize=512M -Dfile.encoding=UTF-8"
 PATH=$CONSCRIPT_HOME/bin:$PATH
+
+# Sublime COMPLETION_WAITING_DOTS
+{{ if eq .chezmoi.os "darwin" }}
+PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+{{ end }}
 
 # More PATH stuff
 PATH="$GOROOT/bin:$HOME/bin:$HOME/.cargo/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH"

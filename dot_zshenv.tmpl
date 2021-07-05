@@ -22,6 +22,10 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 # Go
 export GOROOT=/usr/local/opt/go/libexec
 
+# Gitlab
+export GITLAB_TOKEN=sLKUFsTk6dep64yppbVd
+export GITLAB_TOKEN_USER=private
+
 # Java
 {{ if eq .chezmoi.os "darwin" }}
 export JAVA_HOME="$(/usr/libexec/java_home)"

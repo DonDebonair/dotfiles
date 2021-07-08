@@ -30,11 +30,8 @@ alias mci="mvn clean install"
 
 alias hosts="$EDITOR /etc/hosts"
 
-# List all files colorized in long format
-alias l="ls -l"
-
-# List all files colorized in long format, including dot files
-alias la="ls -la"
+# List all files colorized in long format, including dot files, with human readible file sizes
+alias l="ls -lah"
 
 # List only directories
 alias lsd='ls -l | grep "^d"'

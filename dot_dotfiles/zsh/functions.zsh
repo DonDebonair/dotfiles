@@ -154,3 +154,12 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 function killp() {
   ps aux | percol | awk '{ print $2 }' | xargs kill
 }
+
+# AWS stuff
+
+function purge-queue {
+  account_id=$(aws sts get-caller-identity | jq -r .Account)
+  region=$(aws configure get region)
+  queue_url="https://sqs.${region}.amazonaws.com/${account_id}/$1"
+  aws sqs purge-queue --queue-url "$queue_url"
+}

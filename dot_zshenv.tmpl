@@ -11,7 +11,12 @@ export MANPAGER="less -X"
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
+{{ if eq .chezmoi.os "darwin" }}
 export EDITOR="subl"
+{{ else }}
+export EDITOR="codium"
+{{ end }}
+
 export PAGER="less -R"
 
 # Python

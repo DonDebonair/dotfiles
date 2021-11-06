@@ -1,4 +1,5 @@
 echo "Installing packages and PPAs..."
+
 distro=$(lsb_release -s -c)
 update
 
@@ -25,7 +26,7 @@ package 'adoptopenjdk-16-hotspot'
 
 # Install pyenv
 if ! command -v pyenv &> /dev/null; then
-    curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+    curl https://pyenv.run | bash
 fi
 
 # # Install direnv
@@ -35,7 +36,7 @@ if ! command -v direnv &> /dev/null; then
     | wget -O ~/bin/direnv -q -i - 1>/dev/null 2>&1 && chmod +x ~/bin/direnv
 fi
 
-PIP_REQUIRE_VIRTUALENV=false pip3 show pipx 1>/dev/null 2>&1
-[[ $? -eq 0 ]] || PIP_REQUIRE_VIRTUALENV=false pip3 install pipx
+PIP_REQUIRE_VIRTUALENV=false /usr/bin/pip3 show pipx 1>/dev/null 2>&1
+[[ $? -eq 0 ]] || PIP_REQUIRE_VIRTUALENV=false /usr/bin/pip3 install pipx
 
 sudo npm install --global yarn

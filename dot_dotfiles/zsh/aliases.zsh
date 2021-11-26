@@ -139,7 +139,7 @@ alias dc='docker compose'
 alias dkill='docker rm -f $(docker ps -q)'
 alias dkillall='docker rm -f $(docker ps -aq)'
 alias dclean='docker rm -f $(docker ps -f "status=exited" -q)'
-alias aws-docker-login='aws ecr get-login-password | docker login --username AWS --password-stdin 983227891446.dkr.ecr.eu-central-1.amazonaws.com'
+alias aws-docker-login='aws ecr get-login-password --profile infra-admin | docker login --username AWS --password-stdin 084973803638.dkr.ecr.eu-central-1.amazonaws.com'
 
 # Copy my public SSH key to clipboard
 alias cpk='cat ~/.ssh/id_rsa.pub | pbcopy; echo "Public key copied to clipboard"'

@@ -8,7 +8,6 @@ export HOMEBREW_PREFIX="/usr/local"
 eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
 {{ end }}
 
-
 # Give Maven plenty of memory
 export MAVEN_OPTS='-Xms512m -Xmx1024m'
 
@@ -49,18 +48,13 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 export JAVA_HOME=$(dirname $(dirname $(update-alternatives --query java | grep Best | cut -d " " -f 2)))
 {{ end }}
 
-# Conscript
-export CONSCRIPT_HOME="$HOME/.conscript"
-export CONSCRIPT_OPTS="-XX:MaxPermSize=512M -Dfile.encoding=UTF-8"
-PATH=$CONSCRIPT_HOME/bin:$PATH
-
-# Sublime COMPLETION_WAITING_DOTS
+# Sublime
 {{ if eq .chezmoi.os "darwin" }}
 PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 {{ end }}
 
 # More PATH stuff
-PATH="$GOROOT/bin:$HOME/bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
-PATH="`yarn global bin`:$PATH"
+PATH="$GOROOT/bin:$HOME/bin:$HOME/.cargo/bin:$HOME/go/bin:$HOME/.local/bin:$PATH"
 
+PATH="`yarn global bin`:$PATH"
 export PATH

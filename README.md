@@ -27,21 +27,19 @@ chezmoi update
 
 ## Usage
 
-When you make changes to any zsh-related file managed by `chezmoi`, reloading the configuration is enough:
+When you make changes to the dotfiles, you'll have to apply them
 
 ```zsh
-reload!
-```
-
-When you add Python packages (in the `run_once_40_pipx.sh` script) or Homebrew packages 
-(in the `run_once_install-brew-packages.sh` script), you need to reinstall again:
-
-```zsh
-dot! && reload!
+dot!
 ```
 
 (`dot!` is short for `chezmoi apply`)
 
+You can reload the shell only by doing:
+
+```zsh
+reload!
+```
 
 ## Feedback
 

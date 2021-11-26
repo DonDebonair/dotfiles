@@ -24,7 +24,6 @@ alias ee="$EDITOR ."
 alias o="open"
 alias oo="open ."
 alias h="http"
-alias typora="open -a typora"
 
 alias mci="mvn clean install"
 

@@ -1,6 +1,6 @@
 {{ if eq .chezmoi.os "darwin" }}
-keybindings=/usr/local/opt/fzf/shell/key-bindings.zsh
-completion=/usr/local/opt/fzf/shell/completion.zsh
+keybindings=$HOMEBREW_PREFIX/opt/fzf/shell/key-bindings.zsh
+completion=$HOMEBREW_PREFIX/opt/fzf/shell/completion.zsh
 {{ else }}
 keybindings=/usr/share/doc/fzf/examples/key-bindings.zsh
 completion=/usr/share/doc/fzf/examples/completion.zsh

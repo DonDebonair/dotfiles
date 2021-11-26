@@ -1,3 +1,14 @@
+# Homebrew
+{{ if eq .chezmoi.os "darwin" }}
+{{ if eq .chezmoi.arch "arm64" }}
+export HOMEBREW_PREFIX="/opt/homebrew"
+{{ else }}
+export HOMEBREW_PREFIX="/usr/local"
+{{ end }}
+eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
+{{ end }}
+
+
 # Give Maven plenty of memory
 export MAVEN_OPTS='-Xms512m -Xmx1024m'
 

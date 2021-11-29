@@ -16,7 +16,6 @@ function pipx-install {
 pipx-install httpie
 pipx-install percol
 pipx-install Pygments
-pipx-install stormssh
 pipx-install pre-commit
 pipx-install poetry
 pipx-install ansible-core

@@ -163,3 +163,7 @@ function purge-queue {
   queue_url="https://sqs.${region}.amazonaws.com/${account_id}/$1"
   aws sqs purge-queue --queue-url "$queue_url"
 }
+
+function max-line-length {
+  find . -iname '*.py' -exec awk '{if(length($0) > L) { LINE=NR;L = length($0)}} END {print L"|"FILENAME":"LINE}' {} \; | sort -n
+}

@@ -70,15 +70,4 @@ eval "$(pyenv virtualenv-init -)"
 
 eval "$(direnv hook zsh)"
 
-function update_prompt {
-    if [[ ! -z "$PYENV_VIRTUAL_ENV" ]]; then
-        PY_V=$(python -c 'import platform;v=platform.python_version_tuple();print("%s.%s.%s" % (v))')
-        export RPROMPT="%{${fg_bold[white]}%}(env: %{${fg[green]}%}`basename \"$PYENV_VIRTUAL_ENV\"`@$PY_V%{${fg_bold[white]}%})%{${reset_color}%} $BASE_RPROMPT"
-    else
-        export RPROMPT=$BASE_RPROMPT
-    fi
-}
-if [[ -z "$PYENV_PROMPT_SET" ]]; then
-    precmd_functions+=update_prompt
-    export PYENV_PROMPT_SET=true
-fi
+eval "$(starship init zsh)"

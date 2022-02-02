@@ -4,6 +4,7 @@ cat <<EOF | brew bundle --file=/dev/stdin
 cask_args appdir: '/Applications'
 
 tap 'homebrew/cask-versions'
+tap 'homebrew/cask-fonts'
 
 # Utils
 brew 'zsh'
@@ -48,6 +49,7 @@ brew 'redis'
 brew 'go'
 brew 'direnv'
 brew 'awscli'
+brew 'starship'
 
 # GUI
 cask '1password'
@@ -58,6 +60,7 @@ cask 'docker'
 cask 'dropbox'
 cask 'dropshare'
 cask 'notion'
+cask 'font-fira-mono-nerd-font'
 cask 'google-chrome'
 cask 'iina'
 cask 'iterm2-beta'

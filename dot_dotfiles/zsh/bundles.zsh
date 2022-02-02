@@ -12,7 +12,6 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/docker
     zgen oh-my-zsh plugins/aws
     zgen oh-my-zsh plugins/fzf
-    zgen oh-my-zsh themes/lambda
 
     # Load other plugins
     zgen load djui/alias-tips

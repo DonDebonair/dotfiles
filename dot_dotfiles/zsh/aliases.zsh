@@ -17,7 +17,6 @@ alias addbu="$EDITOR $DOTFILES_SOURCE/dot_dotfiles/zsh/bundles.zsh" # add zgen b
 alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="cd ~/projects"
 alias g="git"
 alias e="$EDITOR"
 alias ee="$EDITOR ."
@@ -139,6 +138,7 @@ alias dkill='docker rm -f $(docker ps -q)'
 alias dkillall='docker rm -f $(docker ps -aq)'
 alias dclean='docker rm -f $(docker ps -f "status=exited" -q)'
 alias aws-docker-login='aws ecr get-login-password --profile infra-admin | docker login --username AWS --password-stdin 084973803638.dkr.ecr.eu-central-1.amazonaws.com'
+alias aws-login='aws sso login --profile development-admin'
 
 # Copy my public SSH key to clipboard
 alias cpk='cat ~/.ssh/id_rsa.pub | pbcopy; echo "Public key copied to clipboard"'

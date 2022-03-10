@@ -32,6 +32,7 @@
 	# Undo a `git push`
 	undopush = push -f origin HEAD^:master
 	lg = "log --pretty=format:'%C(yellow)%h%C(reset) %C(blue)%an%C(reset) %C(cyan)%cr%C(reset) %s %C(green)%d%C(reset)' --graph --date-order"
+	cleanup = "!git branch --merged main | grep -v '^[ *]*main$' >/tmp/merged-branches && $EDITOR --wait --new-window /tmp/merged-branches && xargs git branch -d </tmp/merged-branches"
 
 [apply]
 	# Detect whitespace errors when applying a patch

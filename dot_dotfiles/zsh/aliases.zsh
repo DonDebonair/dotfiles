@@ -17,12 +17,15 @@ alias addbu="$EDITOR $DOTFILES_SOURCE/dot_dotfiles/zsh/bundles.zsh" # add zgen b
 alias d="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias g="git"
 alias e="$EDITOR"
 alias ee="$EDITOR ."
 alias o="open"
 alias oo="open ."
 alias h="http"
+
+# Git shortcuts
+alias g="git"
+alias gl="git pull --prune --rebase --autostash"
 
 alias mci="mvn clean install"
 

@@ -32,6 +32,7 @@ brew 'mas'
 
 # Dev
 cask 'temurin'
+brew 'gh'
 brew 'git'
 brew 'git-delta'
 brew 'git-extras'

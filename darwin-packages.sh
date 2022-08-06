@@ -5,6 +5,7 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/cask-versions'
 tap 'homebrew/cask-fonts'
+tap 'yqrashawn/goku'
 
 # Utils
 brew 'zsh'
@@ -29,6 +30,7 @@ brew 'ripgrep'
 brew 'chezmoi'
 brew 'pipx'
 brew 'mas'
+brew 'goku'
 
 # Dev
 cask 'temurin'

@@ -5,6 +5,7 @@
          :rules [:w-mode
                  [:c [:app "Chrome"]]
                  [:i [:app "iTerm"]]
-                 [:p [:app "PyCharm"]]]}
+                 [:p [:app "PyCharm"]]
+                 [:t [:app "Todoist"]]]}
         {:des "capslock to control as modifier to escape when pressed alone"
          :rules [[:##caps_lock :left_control nil {:alone :escape}]]}]}

@@ -5,3 +5,4 @@ darwin-deps.sh
 linux-packages.sh
 linux-deps.sh
 bootstrap/**
+.idea/**

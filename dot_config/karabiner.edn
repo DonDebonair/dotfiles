@@ -12,9 +12,5 @@
          :rules [[:##caps_lock :left_control nil {:alone :escape}]]}
         {:des "White Corsair, swap left command and option keysß"
          :rules [:white-corsair
-                  [:left_command :left_option]
-                  [:left_option :left_command]
-                  [:!Sleft_option :!Sleft_command]
-                  [:!Sleft_command :!Sleft_option]
-                  [:!Tleft_option :!Tleft_command]
-                  [:!Tleft_command :!Tleft_option]]}]}
+                  [:##left_command :left_option]
+                  [:##left_option :left_command]]}]}

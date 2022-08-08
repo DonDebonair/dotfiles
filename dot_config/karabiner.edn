@@ -1,16 +1,21 @@
-{:devices {:white-corsair [{:vendor_id 6940 :product_id 7019}]}
+{:devices   {:white-corsair [{:vendor_id 6940 :product_id 7019}]
+             :das           [{:vendor_id 9456 :product_id 322}]}
  :templates {:app "osascript -e 'tell application \"%s\" to activate'"}
  :simlayers {:w-mode {:key :w}}
- :main [{:des "launchers"
-         :rules [:w-mode
-                 [:c [:app "Chrome"]]
-                 [:i [:app "iTerm"]]
-                 [:p [:app "PyCharm"]]
-                 [:g [:app "Goland"]]
-                 [:t [:app "Todoist"]]]}
-        {:des "capslock to control as modifier to escape when pressed alone"
-         :rules [[:##caps_lock :left_control nil {:alone :escape}]]}
-        {:des "White Corsair, swap left command and option keysß"
-         :rules [:white-corsair
-                  [:##left_command :left_option]
-                  [:##left_option :left_command]]}]}
+ :main      [{:des   "launchers"
+              :rules [:w-mode
+                      [:c [:app "Chrome"]]
+                      [:i [:app "iTerm"]]
+                      [:p [:app "PyCharm"]]
+                      [:g [:app "Goland"]]
+                      [:t [:app "Todoist"]]]}
+             {:des   "capslock to control as modifier to escape when pressed alone"
+              :rules [[:##caps_lock :left_control nil {:alone :escape}]]}
+             {:des   "White Corsair, swap left command and option keysß"
+              :rules [:white-corsair
+                      [:##left_command :left_option]
+                      [:##left_option :left_command]]}
+             {:des   "DAS, swap left command and option keysß"
+              :rules [:das
+                      [:##left_command :left_option]
+                      [:##left_option :left_command]]}]}

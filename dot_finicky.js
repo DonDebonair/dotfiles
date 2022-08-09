@@ -32,6 +32,10 @@ module.exports = {
       browser: "Spotify"
     },
     {
+      match: "miro.com/app/*",
+      browser: "Miro"
+    },
+    {
       match: /^https:\/\/www\.google\.com\/calendar\/.*$/,
       browser: {
         name: "Google Chrome",

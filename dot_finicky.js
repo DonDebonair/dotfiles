@@ -24,7 +24,7 @@ module.exports = {
       }
     },
     {
-      match: /^https?:\/\/www\.notion\.so\/.*$/,
+      match: /^https?:\/\/www\.notion\.so\/sourceagriculture\/.*$/,
       browser: "Notion"
     },
     {

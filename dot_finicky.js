@@ -1,5 +1,5 @@
 module.exports = {
-  defaultBrowser: "Google Chrome",
+  defaultBrowser: "Firefox",
   handlers: [
     {
       match: [
@@ -11,13 +11,6 @@ module.exports = {
     },
     {
       match: /^https?:\/\/.*\.console\.aws\.amazon\.com\/.*$/,
-      browser: {
-        name: "Google Chrome",
-        profile: "Profile 1",
-      }
-    },
-    {
-      match: /^https?:\/\/.*amazonaws\.com\/.*$/,
       browser: {
         name: "Google Chrome",
         profile: "Profile 1",

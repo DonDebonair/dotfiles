@@ -79,6 +79,9 @@
 [branch "master"]
 	rebase = true
 
+[branch "main"]
+	rebase = true
+
 # URL shorthands
 [url "git@github.com:"]
 	insteadOf = "gh:"
@@ -92,11 +95,13 @@
 	pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
+[url "ssh://git@github.com/"]
+    insteadOf = https://github.com/
 
 # Any GitHub repo with my username should be checked out r/w by default
 # http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
-[url "git@github.com:DandyDev/"]
-  insteadOf = "git://github.com/DandyDev/"
+[url "git@github.com:DonDebonair/"]
+  insteadOf = "git://github.com/DonDebonair/"
 
 [push]
 	default = simple

@@ -42,6 +42,11 @@ export DOTFILES_HELPERS=$HOME/.dotfiles
 # load zgen
 source $DOTFILES_HELPERS/zgen/zgen.zsh
 
+# load source-tooling
+source $DOTFILES_HELPERS/source-tooling/tooling.zsh
+init-source-shell-env
+export SOURCE_TOOLING_AWS_INFRA_PROFILE=infra-admin
+
 # load all config files
 typeset -U config_files
 config_files=($DOTFILES_HELPERS/zsh/*.zsh)
@@ -56,17 +61,6 @@ unset config_files
 {{ if eq .chezmoi.os "darwin" }}
 export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
 {{ end }}
-
-
-# pyenv stuff
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
-fi
-
-eval "$(pyenv virtualenv-init -)"
 
 eval "$(direnv hook zsh)"
 

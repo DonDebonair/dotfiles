@@ -1,3 +1,6 @@
 [submodule "dot_dotfiles/zgen"]
 	path = dot_dotfiles/zgen
 	url = https://github.com/tarjoilija/zgen
+[submodule "dot_dotfiles/source-tooling"]
+	path = dot_dotfiles/source-tooling
+	url = git@github.com:source-ag/source-tooling.git

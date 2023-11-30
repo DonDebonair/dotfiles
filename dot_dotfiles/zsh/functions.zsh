@@ -164,11 +164,6 @@ function purge-queue {
   aws sqs purge-queue --queue-url "$queue_url"
 }
 
-function poetry-login {
-  CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token --domain source-ag --query authorizationToken --profile infra-admin --output text)
-  poetry config http-basic.source-python-packages aws $CODEARTIFACT_AUTH_TOKEN
-}
-
 function max-line-length {
   find . -iname '*.py' -exec awk '{if(length($0) > L) { LINE=NR;L = length($0)}} END {print L"|"FILENAME":"LINE}' {} \; | sort -n
 }

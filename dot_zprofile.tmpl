@@ -1,12 +1,4 @@
-# Homebrew
-{{ if eq .chezmoi.os "darwin" }}
-{{ if eq .chezmoi.arch "arm64" }}
-export HOMEBREW_PREFIX="/opt/homebrew"
-{{ else }}
-export HOMEBREW_PREFIX="/usr/local"
-{{ end }}
-eval "$(${HOMEBREW_PREFIX}/bin/brew shellenv)"
-{{ end }}
+export DOTFILES_HELPERS=$HOME/.dotfiles
 
 # Give Maven plenty of memory
 export MAVEN_OPTS='-Xms512m -Xmx1024m'
@@ -29,13 +21,20 @@ export EDITOR="codium"
 
 export PAGER="less -R"
 
+# load source-tooling
+source $DOTFILES_HELPERS/source-tooling/tooling.zsh
+init-source-shell-env
+export SOURCE_TOOLING_AWS_INFRA_PROFILE=infra-admin
+
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
+
 # Python
 export PIP_REQUIRE_VIRTUALENV=true
 # I make my own promts
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Go
-export GOROOT="$(brew --prefix golang)/libexec"
 export GOBIN=~/go/bin
 
 # Gitlab
@@ -55,7 +54,7 @@ PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 {{ end }}
 
 # More PATH stuff
-PATH="$GOBIN:$HOME/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
+PATH="$GOBIN:$HOME/bin:$HOME/.cargo/bin:$PATH"
 
 # Alternative node
 PATH="/opt/homebrew/opt/node@16/bin:$PATH"
@@ -65,3 +64,4 @@ export PATH
 
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
+

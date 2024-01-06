@@ -37,15 +37,8 @@ zmodload zsh/zprof
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-export DOTFILES_HELPERS=$HOME/.dotfiles
-
 # load zgen
 source $DOTFILES_HELPERS/zgen/zgen.zsh
-
-# load source-tooling
-source $DOTFILES_HELPERS/source-tooling/tooling.zsh
-init-source-shell-env
-export SOURCE_TOOLING_AWS_INFRA_PROFILE=infra-admin
 
 # load all config files
 typeset -U config_files
@@ -66,5 +59,11 @@ eval "$(direnv hook zsh)"
 
 eval "$(starship init zsh)"
 
+export ATUIN_NOBIND="true"
+eval "$(atuin init zsh)"
+bindkey '^r' _atuin_search_widget
+
 # Load invoke shell completion
 source $DOTFILES_HELPERS/zsh/invoke-completion.zsh
+
+

@@ -31,6 +31,7 @@ brew 'ripgrep'
 brew 'chezmoi'
 brew 'mas'
 brew 'goku'
+brew 'atuin'
 
 # Dev
 cask 'temurin'
@@ -47,7 +48,6 @@ brew 'maven'
 brew 'sbt'
 brew 'python'
 brew 'redis'
-brew 'go'
 brew 'direnv'
 brew 'starship'
 

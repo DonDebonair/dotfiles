@@ -10,13 +10,6 @@ module.exports = {
       browser: "us.zoom.xos"
     },
     {
-      match: /^https?:\/\/.*\.console\.aws\.amazon\.com\/.*$/,
-      browser: {
-        name: "Google Chrome",
-        profile: "Profile 1",
-      }
-    },
-    {
       match: /^https?:\/\/www\.notion\.so\/sourceagriculture\/.*$/,
       browser: "Notion"
     },
@@ -27,13 +20,6 @@ module.exports = {
     {
       match: "miro.com/app/*",
       browser: "Miro"
-    },
-    {
-      match: /^https:\/\/www\.google\.com\/calendar\/.*$/,
-      browser: {
-        name: "Google Chrome",
-        profile: "Profile 1",
-      }
     }
   ]
 }

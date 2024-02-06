@@ -55,6 +55,11 @@ unset config_files
 export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
 {{ end }}
 
+# load source-tooling
+source $DOTFILES_HELPERS/source-tooling/tooling.zsh
+init-source-shell-env
+export SOURCE_TOOLING_AWS_INFRA_PROFILE=infra-admin
+
 eval "$(direnv hook zsh)"
 
 eval "$(starship init zsh)"
@@ -65,5 +70,4 @@ bindkey '^r' _atuin_search_widget
 
 # Load invoke shell completion
 source $DOTFILES_HELPERS/zsh/invoke-completion.zsh
-
 

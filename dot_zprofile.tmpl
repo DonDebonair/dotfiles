@@ -21,13 +21,6 @@ export EDITOR="codium"
 
 export PAGER="less -R"
 
-# load source-tooling
-source $DOTFILES_HELPERS/source-tooling/tooling.zsh
-init-source-shell-env
-export SOURCE_TOOLING_AWS_INFRA_PROFILE=infra-admin
-
-export PATH="$GOROOT/bin:$PATH"
-export PATH="$PATH:$GOPATH/bin"
 
 # Python
 export PIP_REQUIRE_VIRTUALENV=true
@@ -36,10 +29,8 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Go
 export GOBIN=~/go/bin
-
-# Gitlab
-export GITLAB_TOKEN=sLKUFsTk6dep64yppbVd
-export GITLAB_TOKEN_USER=private
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
 
 # Java
 {{ if eq .chezmoi.os "darwin" }}
@@ -64,4 +55,3 @@ export PATH
 
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1
-

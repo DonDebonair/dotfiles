@@ -21,6 +21,10 @@ export EDITOR="codium"
 
 export PAGER="less -R"
 
+# load source-tooling
+source $DOTFILES_HELPERS/source-tooling/tooling.zsh
+init-source-shell-env
+export SOURCE_TOOLING_AWS_INFRA_PROFILE=infra-admin
 
 # Python
 export PIP_REQUIRE_VIRTUALENV=true

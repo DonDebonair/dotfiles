@@ -52,13 +52,8 @@ done
 unset config_files
 
 {{ if eq .chezmoi.os "darwin" }}
-export PATH="$(brew --prefix)/opt/python/libexec/bin:$PATH"
+export PATH="$PATH:$(brew --prefix)/opt/python/libexec/bin"
 {{ end }}
-
-# load source-tooling
-source $DOTFILES_HELPERS/source-tooling/tooling.zsh
-init-source-shell-env
-export SOURCE_TOOLING_AWS_INFRA_PROFILE=infra-admin
 
 eval "$(direnv hook zsh)"
 

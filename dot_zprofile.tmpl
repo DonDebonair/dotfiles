@@ -21,11 +21,6 @@ export EDITOR="codium"
 
 export PAGER="less -R"
 
-# load source-tooling
-source $DOTFILES_HELPERS/source-tooling/tooling.zsh
-init-source-shell-env
-export SOURCE_TOOLING_AWS_INFRA_PROFILE=infra-admin
-
 # Python
 export PIP_REQUIRE_VIRTUALENV=true
 # I make my own promts
@@ -56,6 +51,10 @@ PATH="/opt/homebrew/opt/node@16/bin:$PATH"
 
 PATH="`yarn global bin`:$PATH"
 export PATH
+
+# pyenv
+eval "$(pyenv init -)" 
+eval "$(pyenv virtualenv-init -)"
 
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1

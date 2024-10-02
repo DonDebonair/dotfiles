@@ -37,6 +37,8 @@ zmodload zsh/zprof
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+export HOMEBREW_PREFIX=$(brew --prefix)
+
 # load zgen
 source $DOTFILES_HELPERS/zgen/zgen.zsh
 

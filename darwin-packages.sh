@@ -53,6 +53,7 @@ brew 'pipx'
 brew 'redis'
 brew 'direnv'
 brew 'starship'
+brew 'uv'
 
 # GUI
 cask '1password'
@@ -75,5 +76,4 @@ cask 'sublime-text'
 cask 'telegram-desktop'
 cask 'vlc'
 cask 'vscodium'
-cask 'xbar'
 EOF

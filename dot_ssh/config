@@ -1,0 +1,4 @@
+Host nas.dv.zone
+    hostname nas.dv.zone
+    user daanadmin
+    port 22910

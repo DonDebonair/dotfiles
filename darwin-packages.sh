@@ -3,10 +3,7 @@ echo "Installing Homebrew packages and casks..."
 cat <<EOF | brew bundle --file=/dev/stdin
 cask_args appdir: '/Applications'
 
-tap 'homebrew/cask-versions'
-tap 'homebrew/cask-fonts'
 tap 'yqrashawn/goku'
-tap 'homebrew/cask-drivers'
 
 # Utils
 brew 'zsh'

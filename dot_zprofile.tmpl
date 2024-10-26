@@ -1,4 +1,5 @@
 export DOTFILES_HELPERS=$HOME/.dotfiles
+export HOMEBREW_PREFIX=$(brew --prefix)
 
 # Give Maven plenty of memory
 export MAVEN_OPTS='-Xms512m -Xmx1024m'
@@ -27,9 +28,9 @@ export PIP_REQUIRE_VIRTUALENV=true
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Go
-export GOBIN=~/go/bin
-export PATH="$GOROOT/bin:$PATH"
-export PATH="$PATH:$GOPATH/bin"
+export GOPATH=~/go
+export GOBIN=$GOPATH/bin
+export PATH="$GOBIN:$PATH"
 
 # Java
 {{ if eq .chezmoi.os "darwin" }}
@@ -44,10 +45,7 @@ PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 {{ end }}
 
 # More PATH stuff
-PATH="$GOBIN:$HOME/bin:$HOME/.cargo/bin:$PATH"
-
-# Alternative node
-PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+PATH="$HOME/bin:$HOME/.cargo/bin:$HOMEBREW_PREFIX/sbin:$PATH"
 
 PATH="`yarn global bin`:$PATH"
 export PATH

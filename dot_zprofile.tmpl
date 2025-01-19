@@ -1,5 +1,10 @@
 export DOTFILES_HELPERS=$HOME/.dotfiles
-export HOMEBREW_PREFIX=$(brew --prefix)
+{{ if eq .chezmoi.os "darwin" }}
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH"
+{{ end }}
 
 # Give Maven plenty of memory
 export MAVEN_OPTS='-Xms512m -Xmx1024m'
@@ -45,9 +50,8 @@ PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 {{ end }}
 
 # More PATH stuff
-PATH="$HOME/bin:$HOME/.cargo/bin:$HOMEBREW_PREFIX/sbin:$PATH"
+PATH="$HOME/bin:$HOME/.cargo/bin:$PATH"
 
-PATH="`yarn global bin`:$PATH"
 export PATH
 
 # pyenv

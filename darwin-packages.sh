@@ -3,8 +3,6 @@ echo "Installing Homebrew packages and casks..."
 cat <<EOF | brew bundle --file=/dev/stdin
 cask_args appdir: '/Applications'
 
-tap 'yqrashawn/goku'
-
 # Utils
 brew 'zsh'
 brew 'openssl'
@@ -27,7 +25,7 @@ brew 'the_silver_searcher'
 brew 'ripgrep'
 brew 'chezmoi'
 brew 'mas'
-brew 'goku'
+brew 'yqrashawn/goku/goku'
 brew 'atuin'
 
 # Dev
@@ -65,6 +63,7 @@ cask 'jetbrains-toolbox'
 cask 'karabiner-elements'
 cask 'notion'
 cask 'raindropio'
+cask 'raycast'
 cask 'rectangle'
 cask 'slack'
 cask 'spotify'

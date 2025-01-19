@@ -20,7 +20,7 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 {{ if eq .chezmoi.os "darwin" }}
-export EDITOR="subl"
+export EDITOR="zed"
 {{ else }}
 export EDITOR="codium"
 {{ end }}
@@ -55,7 +55,7 @@ PATH="$HOME/bin:$HOME/.cargo/bin:$PATH"
 export PATH
 
 # pyenv
-eval "$(pyenv init -)" 
+eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 export DOCKER_BUILDKIT=1

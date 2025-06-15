@@ -2,3 +2,4 @@ Host nas.dv.zone
     hostname nas.dv.zone
     user daanadmin
     port 22910
+    SetEnv TERM=xterm-256color

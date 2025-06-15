@@ -44,9 +44,8 @@ export JAVA_HOME="$(/usr/libexec/java_home)"
 export JAVA_HOME=$(dirname $(dirname $(update-alternatives --query java | grep Best | cut -d " " -f 2)))
 {{ end }}
 
-# Sublime
 {{ if eq .chezmoi.os "darwin" }}
-PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+PATH="/Users/daan/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
 {{ end }}
 
 # More PATH stuff

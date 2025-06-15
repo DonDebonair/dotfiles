@@ -45,7 +45,7 @@
 	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
 	# whitespace = space-before-tab,indent-with-non-tab,trailing-space
 {{ if eq .chezmoi.os "darwin" }}
-	editor = subl --wait --new-window
+	editor = zed --wait
 {{ else }}
 	editor = codium --wait --new-window
 {{ end }}
@@ -72,7 +72,7 @@
 
 [branch]
 	autosetuprebase = always
-	
+
 [branch "develop"]
 	rebase = true
 

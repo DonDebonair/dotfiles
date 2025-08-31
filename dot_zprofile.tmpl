@@ -40,8 +40,6 @@ export PATH="$GOBIN:$PATH"
 # Java
 {{ if eq .chezmoi.os "darwin" }}
 export JAVA_HOME="$(/usr/libexec/java_home)"
-{{ else }}
-export JAVA_HOME=$(dirname $(dirname $(update-alternatives --query java | grep Best | cut -d " " -f 2)))
 {{ end }}
 
 {{ if eq .chezmoi.os "darwin" }}
@@ -54,8 +52,10 @@ PATH="$HOME/bin:$HOME/.cargo/bin:$PATH"
 export PATH
 
 # pyenv
+{{ if eq .chezmoi.os "darwin" }}
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+{{ end }}
 
 export DOCKER_BUILDKIT=1
 export COMPOSE_DOCKER_CLI_BUILD=1

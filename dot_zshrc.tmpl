@@ -66,4 +66,8 @@ bindkey '^r' _atuin_search_widget
 # Load invoke shell completion
 source $DOTFILES_HELPERS/zsh/invoke-completion.zsh
 
+{{ if eq .chezmoi.os "darwin" }}
 export PATH="$PATH:/Users/daan/.local/bin"
+{{ else }}
+export PATH="$PATH:/home/daan/.local/bin"
+{{ end }}

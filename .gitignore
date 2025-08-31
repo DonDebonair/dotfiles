@@ -1,1 +1,3 @@
 .idea/
+.clj-kondo/
+.lsp/

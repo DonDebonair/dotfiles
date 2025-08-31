@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+{{ if eq .chezmoi.os "darwin" }}
 echo "Installing packages with uv tool..."
 
 uv tool install httpie
@@ -8,3 +9,4 @@ uv tool install Pygments
 uv tool install pre-commit
 uv tool install poetry
 uv tool install ansible-core
+{{ end }}

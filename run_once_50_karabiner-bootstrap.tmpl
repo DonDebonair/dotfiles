@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+{{ if eq .chezmoi.os "darwin" }}
+cp {{ .chezmoi.sourceDir }}/bootstrap/karabiner.json ~/.config/karabiner
+{{ end }}

@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
+{{ if eq .chezmoi.os "darwin" }}
 # karabiner.edn hash: {{ include "dot_config/karabiner.edn" | sha256sum }}
 goku
+{{ end }}

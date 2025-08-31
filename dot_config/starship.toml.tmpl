@@ -22,3 +22,8 @@ disabled = false
 
 [git_branch]
 symbol = " "
+
+{{ if eq .chezmoi.os "linux" }}
+[container]
+disabled = true
+{{ end }}

@@ -10,3 +10,10 @@ Host pve.dv.zone
 Host postgres.dv.zone
     hostname 192.168.1.41
     ForwardAgent yes
+
+Host dockervm.dv.zone
+    hostname 192.168.50.10
+    ForwardAgent yes
+
+Host pbs.dv.zone
+    ForwardAgent yes

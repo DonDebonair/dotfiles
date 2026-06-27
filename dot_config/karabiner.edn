@@ -1,12 +1,12 @@
 {:devices   {:white-corsair [{:vendor_id 6940 :product_id 7019}]
              :das           [{:vendor_id 9456 :product_id 322}]
-             :keychron		[{:vendor_id 13364 :product_id 2064}]}
+             :keychron		  [{:vendor_id 13364 :product_id 2064}]
+             :philips       [{:vendor_id 7247 :product_id 2}]}
  :main      [{:des   "capslock to control as modifier to escape when pressed alone"
               :rules [[:##caps_lock :left_control nil {:alone :escape}]]}
              {:des   "White Corsair, swap left command and option keys"
-              :rules [:white-corsair
-                      [:##left_command :left_option]
-                      [:##left_option :left_command]]}
+              :rules [[:##left_command :left_option [:white-corsair :philips]]
+                      [:##left_option :left_command [:white-corsair :philips]]]}
              {:des   "DAS, swap left command and option keys"
               :rules [:das
                       [:##left_command :left_option]
